@@ -1,0 +1,20 @@
+/* C:\Users\user\LPws\lpws\components\Main.css */
+.main-container {
+    position: relative;
+    top: 932px; /* 上からの位置 */
+    left: 108px; /* 左からの位置 */
+}
+
+.text-item {
+    width: 110px; /* 固定幅 */
+    height: 76px; /* 固定高さ */
+    opacity: 0; /* 不透明度 */
+    
+    font-family: 'Abel', sans-serif; /* フォントファミリー */
+    font-size: 60px; /* フォントサイズ */
+    font-weight: 400; /* フォントウェイト */
+    line-height: 76.46px; /* 行の高さ */
+    text-align: left; /* テキストの配置 */
+
+    background: linear-gradient(90deg, #FF4747 0%, #FFE27B 100%); /* 線形グラデーション */
+}
