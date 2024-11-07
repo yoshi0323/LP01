@@ -1,6 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import './Header.css';
+import Main from './Main';
+import Main1 from './Main1'; // Main1コンポーネントをインポート
 
 const Header = () => {
     return (
@@ -150,6 +152,8 @@ const Header = () => {
             {/* 既存のcircle-backgroundはそのままに、新しい右丸要素を追加 */}
             <div className="circle-background"></div>
             <div className="right-circle-gradient"></div>
+            <Main />
+            <Main1 />
         </header>
     );
 };

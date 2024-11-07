@@ -1,14 +1,16 @@
 /* C:\Users\user\LPws\lpws\components\Main.css */
 .main-container {
     position: relative;
-    top: 932px; /* 上からの位置 */
-    left: 108px; /* 左からの位置 */
+    margin-top: 50px; /* Headerの高さに応じて調整 */
 }
 
 .text-item {
+    position: absolute; /* 位置を絶対に設定 */
+    top: 932px; /* 上からの位置 */
+    left: 108px; /* 左からの位置 */
     width: 110px; /* 固定幅 */
     height: 76px; /* 固定高さ */
-    opacity: 0; /* 不透明度 */
+    opacity: 1; /* 不透明度を1に変更 */
     
     font-family: 'Abel', sans-serif; /* フォントファミリー */
     font-size: 60px; /* フォントサイズ */
@@ -17,4 +19,421 @@
     text-align: left; /* テキストの配置 */
 
     background: linear-gradient(90deg, #FF4747 0%, #FFE27B 100%); /* 線形グラデーション */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.curved-background {
+    position: absolute;
+    width: 890px;
+    height: 1440px;
+    top: 932px;
+    right: 0;
+    opacity: 1;
+    z-index: 1;
+    
+    /* グラデーション背景 - 右上から左下へ */
+    background: linear-gradient(117.45deg, #FE7A6E 61.61%, rgba(255, 214, 119, 0) 100.08%);
+    
+    /* 影の設定 */
+    box-shadow: -10px 4px 32px 0px rgba(253, 137, 117, 0.36);
+    
+    /* 角度を-90度に回転 */
+    transform: rotate(-90deg);
+    transform-origin: right top;
+    
+    /* 曲線の形状 */
+    border-radius: 0 0 50% 50%;
+}
+
+.asset-box {
+    position: absolute;
+    width: 90px; /* 固定幅 */
+    height: 651px; /* 内包高さ */
+    top: 932px; /* 上からの位置 */
+    left: 309px; /* 左からの位置 */
+    gap: 0px; /* ギャップ */
+    opacity: 0; /* 不透明度を0に設定 */
+    
+    /* 背景色の設定 */
+    background: linear-gradient(90deg, #FF4747, #FFE27B); /* 丸色のグラデーション */
+    
+    /* 縦線の設定 */
+    border-left: 5px solid #FF4747; /* 左の縦線 */
+    border-right: 5px solid #FFE27B; /* 右の縦線 */
+}
+
+.letter-circle {
+    position: absolute;
+    width: 90px; /* 固定幅 */
+    height: 90px; /* 固定高さ */
+    top: 932px; /* 上からの位置 */
+    left: 309px; /* 左からの位置 */
+    opacity: 1; /* 不透明度を1に設定 */
+    
+    border: none; /* ボーダーを削除 */
+    
+    /* 画像を背景として設定 */
+    background-image: url('/images/Ellipse 11.svg'); /* 画像パス */
+    background-size: cover; /* 画像をカバー */
+    background-position: center; /* 画像の位置を中央に */
+    border-radius: 50%; /* 丸くするための設定 */
+}
+
+.email-icon {
+    position: absolute;
+    width: 40px; /* 固定幅 */
+    height: 40px; /* 固定高さ */
+    top: 957px; /* 上からの位置 */
+    left: 334px; /* 左からの位置 */
+    opacity: 1; /* 不透明度を1に設定 */
+    z-index: 10; /* 最前面に持ってくるための設定 */
+    
+    /* 画像を背景として設定 */
+    background-image: url('/images/mark_email_read_24dp_E8EAED_FILL0_wght100_GRAD0_opsz24 1.svg'); /* 画像パス */
+    background-size: contain; /* 画像を含むサイズに設定 */
+    background-position: center; /* 画像の位置を中央に */
+    background-repeat: no-repeat; /* 画像の繰り返しを無効に */
+}
+
+.line {
+    position: absolute;
+    width: 2px; /* 幅を2pxに変更（SVGの実際の表示幅） */
+    height: 97px; /* 固定高さ */
+    top: 1022px; /* 上からの位置 */
+    left: 354px; /* 左からの位置を修正 */
+    opacity: 1;
+    z-index: 10;
+    
+    /* グラデーションの設定 */
+    background: linear-gradient(180deg, #FF4747 0%, #FFE27B 100%);
+}
+
+/* または、SVGを直接使用する場合 */
+.line {
+    position: absolute;
+    width: 2px; /* SVGの実際の表示幅 */
+    height: 97px;
+    top: 1022px;
+    left: 354px;
+    opacity: 1;
+    z-index: 10;
+    
+    /* SVGの設定 */
+    background-image: url('/images/Vector 13.svg');
+    background-size: 100% 100%; /* 要素に合わせて拡大 */
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* グラデーションの適用 */
+    mask-image: url('/images/Vector 13.svg');
+    -webkit-mask-image: url('/images/Vector 13.svg');
+    background: linear-gradient(180deg, #FF4747 0%, #FFE27B 100%);
+}
+
+.movie-circle {
+    position: absolute;
+    width: 90px; /* 固定幅 */
+    height: 90px; /* 固定高さ */
+    top: 1119px; /* 上からの位置 */
+    left: 309px; /* 左からの位置 */
+    opacity: 1; /* 不透明度を1に設定 */
+    
+    border: none; /* ボーダーを削除 */
+    
+    /* 画像を背景として設定 */
+    background-image: url('/images/Ellipse 12.svg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.movie-icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 1144px;
+    left: 334px;
+    opacity: 1;
+    z-index: 10;
+    
+    /* 画像を背景として設定 */
+    background-image: url('/images/live_tv_24dp_E8EAED_FILL0_wght100_GRAD0_opsz24 1.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.line2 {
+    position: absolute;
+    width: 2px;
+    height: 97px;
+    top: 1209px;
+    left: 354px;
+    opacity: 1;
+    z-index: 10;
+    
+    /* グラデーションの設定 */
+    background: linear-gradient(180deg, #FF4747 0%, #FFE27B 100%);
+}
+
+.consultant-circle {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top: 1306px;
+    left: 309px;
+    opacity: 1;
+    
+    border: none;
+    background-image: url('/images/Ellipse 13.svg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.consultant-icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 1331px;
+    left: 334px;
+    opacity: 1;
+    z-index: 10;
+    
+    background-image: url('/images/event_24dp_E8EAED_FILL0_wght100_GRAD0_opsz24 1.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.line3 {
+    position: absolute;
+    width: 2px;
+    height: 97px;
+    top: 1396px;
+    left: 354px;
+    opacity: 1;
+    z-index: 10;
+    
+    background: linear-gradient(180deg, #FF4747 0%, #FFE27B 100%);
+}
+
+.group-circle {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top: 1493px;
+    left: 309px;
+    opacity: 1;
+    
+    border: none;
+    background-image: url('/images/Ellipse 14.svg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.group-icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 1518px;
+    left: 335px;
+    opacity: 1;
+    z-index: 10;
+    
+    background-image: url('/images/groups_24dp_E8EAED_FILL0_wght100_GRAD0_opsz24 1.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* icon横のtext1*/
+.contact-text {
+    position: absolute;
+    width: 133px;
+    height: 28px;
+    top: 941px;
+    left: 429px;
+    opacity: 1; /* 表示するために1に設定 */
+    
+    /* フォントの設定 */
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    
+    /* テキストカラー */
+    color: #626262;
+}
+
+/* サブテキストの設定（「本ページから～」の部分） */
+.contact-subtext {
+    position: absolute;
+    left: 429px;
+    top: 980px; /* メインテキストの下に配置 */
+    
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    color: #626262;
+}
+
+.movie-text {
+    position: absolute;
+    width: 99px;
+    height: 28px;
+    top: 1119px;
+    left: 429px;
+    opacity: 1;
+    
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    
+    color: #626262;
+}
+
+.movie-subtext {
+    position: absolute;
+    left: 429px;
+    top: 1158px;
+    
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    color: #626262;
+}
+
+.consultant-text {
+    position: absolute;
+    width: 187px; /* 修正: 187pxに変更 */
+    height: 28px;
+    top: 1315px; /* 修正: 1315pxに変更 */
+    left: 429px;
+    opacity: 1; /* 表示するために1に設定 */
+    
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    
+    color: #626262;
+}
+
+.consultant-subtext {
+    position: absolute;
+    left: 429px;
+    top: 1345px;
+    
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    color: #626262;
+}
+
+.group-text {
+    position: absolute;
+    width: 103px; /* 修正: 103pxに変更 */
+    height: 28px;
+    top: 1502px; /* 修正: 1502pxに変更 */
+    left: 429px;
+    opacity: 1; /* 表示するために1に設定 */
+    
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    
+    color: #626262;
+}
+
+.group-subtext {
+    position: absolute;
+    left: 429px;
+    top: 1532px;
+    
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    color: #626262;
+}
+
+.feature-item {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.check-icon {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 29px;
+    top: 325px;
+    opacity: 1;
+    border: 1px solid transparent;
+    background: 
+        linear-gradient(white, white) padding-box,
+        linear-gradient(90deg, #FF4747 0%, #FFE27B 100%) border-box;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-text {
+    position: absolute;
+    width: 125px;
+    height: 28px;
+    left: 55px; /* check-icon(29px) + width(16px) + gap(10px) */
+    top: 325px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+    color: #626262;
+}
+
+.feature-container {
+    position: absolute;
+    top: 325px;  /* vector-6の位置(302px) + 23px */
+    left: 29px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.check-icon-wrapper {
+    position: relative;
+    width: 16px;
+    height: 16px;
+}
+
+.feature-text {
+    font-family: 'Noto Sans JP', sans-serif;
+    width: 125px;
+    height: 28px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    color: #626262;
 }

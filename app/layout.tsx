@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Abel } from 'next/font/google';
+import { Abel, Noto_Sans_JP } from 'next/font/google';
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -12,6 +12,11 @@ const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
+});
+
+const notoSansJP = Noto_Sans_JP({
+  weight: ['400'],
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
@@ -31,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className={`${abel.className} antialiased`}>
+      <body className={`${abel.className} ${notoSansJP.className} antialiased`}>
         <div className="container">
           {children}
         </div>
