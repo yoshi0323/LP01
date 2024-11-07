@@ -1,6 +1,8 @@
 /* C:\Users\user\LPws\lpws\components\Main.css */
 /* フォントのインポート */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+/* Damionフォントのインポート */
+@import url('https://fonts.googleapis.com/css2?family=Damion&display=swap');
 
 .menu-text {
     position: absolute;
@@ -174,7 +176,6 @@
     width: 16px;
     height: 16px;
     left: 29px;
-    top: 325px;
     opacity: 1;
     display: flex;
     align-items: center;
@@ -188,24 +189,443 @@
     outline: none !important;
 }
 
-/* 他のスタイルは一旦コメントアウトまたは削除 */
+/* 共通のベクターライン（区切り線）スタイル */
+.vector-7, .vector-8, .vector-9, .vector-10 {
+    position: absolute;
+    width: 271px;
+    height: 1px;
+    left: 29px;
+    opacity: 1;
+    background: linear-gradient(90deg, #FF4747 0%, #FFE27B 100%);
+}
 
-.atext1 {
+.vector-7 { top: 365px; }
+.vector-8 { top: 425px; }
+.vector-9 { top: 485px; }
+.vector-10 { top: 545px; }
+
+/* チェックアイコンの位置設定 */
+.check-icon { top: 325px; }
+.check-icon2 {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 29px;
+    top: 385px;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.check-icon3 {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 29px;
+    top: 445px;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.check-icon4 {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 29px;
+    top: 505px;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+/* テキストスタイル */
+.atext2, .atext3, .atext4 {
     position: absolute;
     width: 125px;
     height: 28px;
-    top: 325px;  /* check-iconと同じ高さ */
-    left: 55px;  /* check-icon(29px) + width(16px) + gap(10px) */
-    opacity: 1;
-    
-    /* フォントの設定 */
+    left: 55px;
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 28px;
     letter-spacing: 0.1em;
     text-align: left;
+    color: #626262;
+}
+
+.atext2 { 
+    top: 385px;
+    width: 200px; /* テキストが長いため幅を調整 */
+}
+
+.atext3 { 
+    top: 445px;
+}
+
+.atext4 { 
+    top: 505px;
+    width: 220px; /* テキストが長いため幅を調整 */
+}
+
+/* 他のスタイルは一旦コメントアウトまたは削除 */
+
+/* 既存のスタイルに追加 */
+
+.plan-container-b {
+    position: absolute;
+    width: 324px;
+    height: 549px;
+    top: 2128px;
+    left: 558px;
+    gap: 0px;
+    opacity: 1;
+    background: #FFFFFF;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    background-image: 
+        linear-gradient(#FFFFFF, #FFFFFF), 
+        linear-gradient(208.93deg, #FF4F4A 0%, rgba(255, 196, 113, 0) 51.03%, #FF4F4A 98.14%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.plan-container-c {
+    position: absolute;
+    width: 324px;
+    height: 549px;
+    top: 2128px;
+    left: 922px;
+    gap: 0px;
+    opacity: 1;
+    background: #FFFFFF;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    background-image: 
+        linear-gradient(#FFFFFF, #FFFFFF), 
+        linear-gradient(208.93deg, #FF4F4A 0%, rgba(255, 196, 113, 0) 51.03%, #FF4F4A 98.14%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+/* プランB、Cの文字スタイル */
+.plan-container-b .plan-letter {
+    position: relative;
+    width: 41px;
+    height: 76px;
+    margin-top: 38px;
+    margin-left: 29px;
+    font-family: 'Abel', sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 76.46px;
+    background: linear-gradient(90deg, #FF4747 0%, #FFE27B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.plan-container-c .plan-letter {
+    position: relative;
+    width: 41px;
+    height: 76px;
+    margin-top: 38px;
+    margin-left: 29px;
+    font-family: 'Abel', sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 76.46px;
+    background: linear-gradient(90deg, #FF4747 0%, #FFE27B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* 既存のスタイルに追加 */
+.get-ability-text {
+    position: absolute;
+    width: 320px;
+    height: 28px;
+    top: 2981px;
+    left: 598px;
+    gap: 0px;
+    opacity: 1;
+    
+    /* フォントスタイル */
+    font-family: 'Damion', cursive;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    
+    /* テキストを1行に収める設定 */
+    white-space: nowrap;
+    overflow: visible;
     
     /* テキストカラー */
-    color: #626262;
+    color: #FF7858;
+}
+
+.get-ability-text1 {
+    position: absolute;
+    width: 280px;
+    height: 28px;
+    top: 3033px;
+    left: 580px;
+    gap: 0px;
+    opacity: 1;  /* 表示するために1に設定 */
+    
+    /* フォントスタイル */
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    
+    /* テキストを1行に収める設定 */
+    white-space: nowrap;
+    overflow: hidden;
+    
+    /* テキストカラー */
+    color: var(--gray, #626262);
+}
+
+.input-field {
+    position: absolute;
+    width: 726px;
+    height: 66px;
+    top: 3141px;
+    left: 362px;
+    gap: 0px;
+    opacity: 1;
+    
+    /* 背景色 */
+    background: #FFFFFF;
+    
+    /* 角丸の設定 */
+    border-radius: 12px;
+    
+    /* グラデーションボーダー */
+    border: 1.5px solid transparent;
+    background-image: 
+        linear-gradient(#FFFFFF, #FFFFFF), 
+        linear-gradient(90deg, #FF4747 0%, #FFE27B 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    
+    /* シャドウ設定 */
+    box-shadow: 0px 4px 12px rgba(253, 129, 114, 0.2); /* #FD817233 */
+}
+
+.input-text {
+    position: absolute;
+    width: 85px;
+    height: 28px;
+    top: 18px;  /* 3159px - 3141px = 18px (親要素からの相対位置) */
+    left: 30px;  /* 392px - 362px = 30px (親要素からの相対位置) */
+    gap: 0px;
+    opacity: 1;
+    
+    /* フォントスタイル */
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    
+    /* グラデーションテキスト */
+    background: linear-gradient(90deg, #FF4747 0%, #FFE27B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.submit-button {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    top: 14px;  /* 3155px - 3141px = 14px (親要素からの相対位置) */
+    right: 14px;  /* 右端からの位置を指定 */
+    gap: 0px;
+    opacity: 1;
+    
+    /* グラデーション背景 */
+    background: linear-gradient(90deg, #FF4747 0%, #FFE27B 100%);
+    
+    /* 白いボーダー */
+    border: 1.5px solid #FFFFFF;
+    border-radius: 50%;  /* 円形にする */
+    
+    /* ボタンの配置 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;  /* ホバー時のカーソル */
+}
+
+.submit-icon {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+
+/* 入力フィールドのスタイルも更新して、ボタンのスペースを確保 */
+.input-field {
+    /* 既存のスタイル ... */
+    display: flex;
+    align-items: center;
+    padding-right: 14px;  /* ボタンのスペースを確保 */
+    position: relative;
+}
+
+.qa-background {
+    position: absolute;
+    width: 1440px;
+    height: 589px;
+    top: 3465px;
+    left: -1px;
+    gap: 0px;
+    opacity: 0.8;
+    z-index: 1;
+    
+    /* グラデーション背景 */
+    background: linear-gradient(90deg, #FF4747 0%, #FFE27B 100%);
+}
+
+.qa-text {
+    position: absolute;
+    width: 120px;
+    height: 153px;
+    top: -36px;
+    left: 40px;
+    gap: 0px;
+    opacity: 1;
+    z-index: 2;
+    
+    /* フォントスタイル */
+    font-family: 'Abel', sans-serif;
+    font-size: 120px;
+    font-weight: 400;
+    line-height: 152.93px;
+    text-align: left;
+    
+    color: #F6F8FB;
+}
+
+.qa-image {
+    position: absolute;
+    width: 371px;
+    height: 589px;
+    top: 0;
+    left: 1070px;
+    gap: 0px;
+    opacity: 1;
+    z-index: 3;
+    
+    /* 画像のフィット設定 */
+    object-fit: cover;
+}
+
+.qa-content-frame {
+    position: absolute;
+    width: 726px;
+    height: 429px;
+    top: 80px;  /* 3545px - 3465px = 80px (親要素からの相対位置) */
+    left: 264px;  /* 263px - (-1px) = 264px (親要素からの相対位置) */
+    gap: 16px;
+    opacity: 1;
+    z-index: 2;  /* QA背景より前面に配置 */
+    
+    /* 後で要素を追加しやすいように */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.qa-item {
+    width: 726px;
+    height: 66px;
+    gap: 0px;
+    opacity: 1;
+    position: relative;
+    
+    /* 背景を透過 */
+    background: transparent;
+    
+    /* 角丸と白いボーダー */
+    border-radius: 12px;
+    border: 1.5px solid #FFFFFF;
+    
+    /* 子要素の配置 */
+    display: flex;
+    align-items: center;
+}
+
+.qa-q-label {
+    position: absolute;
+    width: 16px;
+    height: 29px;
+    top: 17px;
+    left: 32px;
+    gap: 0px;
+    opacity: 1;
+    
+    /* フォントスタイル */
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28.96px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    
+    color: #FFFFFF;  /* 背景色を白から文字色を白に変更 */
+}
+
+.qa-vertical-line {
+    position: absolute;
+    width: 0;
+    height: 65px;
+    top: 1px;
+    left: 79px;
+    gap: 0px;
+    opacity: 1;
+    
+    /* 白い縦線 */
+    border-left: 1.5px solid #FFFFFF;
+}
+
+.qa-question-text {
+    position: absolute;
+    width: 130px;
+    height: 28px;
+    top: 18px;
+    left: 111px;
+    gap: 0px;
+    opacity: 1;
+    
+    /* フォントスタイル */
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    
+    color: #FFFFFF;  /* 背景色を白から文字色を白に変更 */
+}
+
+.qa-expand-icon {
+    position: absolute;
+    right: 20px;  /* 右端からの位置 */
+    top: 50%;
+    transform: translateY(-50%);  /* 垂直中央揃え */
 }

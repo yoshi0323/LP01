@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Abel, Noto_Sans_JP } from 'next/font/google';
+import { Abel, Noto_Sans_JP, Damion } from 'next/font/google';
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -16,6 +16,11 @@ const geistMono = localFont({
 
 const notoSansJP = Noto_Sans_JP({
   weight: ['400'],
+  subsets: ['latin'],
+});
+
+const damion = Damion({
+  weight: '400',
   subsets: ['latin'],
 });
 
@@ -36,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className={`${abel.className} ${notoSansJP.className} antialiased`}>
+      <body className={`${abel.className} ${notoSansJP.className} ${damion.className} antialiased`}>
         <div className="container">
           {children}
         </div>

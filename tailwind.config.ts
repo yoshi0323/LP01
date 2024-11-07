@@ -12,6 +12,11 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        abel: ['Abel', 'sans-serif'],
+        noto: ['Noto Sans JP', 'sans-serif'],
+        damion: ['Damion', 'cursive'],
+      },
     },
   },
   plugins: [],
