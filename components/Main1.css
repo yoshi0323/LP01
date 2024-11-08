@@ -568,6 +568,8 @@
     /* 子要素の配置 */
     display: flex;
     align-items: center;
+    padding: 0; /* パディングを0に設定 */
+    margin: 0; /* マージンを0に設定 */
 }
 
 .qa-q-label {
@@ -605,7 +607,7 @@
 
 .qa-question-text {
     position: absolute;
-    width: 130px;
+    width: 200px; /* 幅を広げる（130px → 200px） */
     height: 28px;
     top: 18px;
     left: 111px;
@@ -619,8 +621,11 @@
     line-height: 28px;
     letter-spacing: 0.1em;
     text-align: left;
+    white-space: nowrap; /* テキストを1行に強制 */
+    overflow: hidden; /* はみ出した部分を隠す */
+    text-overflow: ellipsis; /* 必要に応じて省略記号を表示 */
     
-    color: #FFFFFF;  /* 背景色を白から文字色を白に変更 */
+    color: #FFFFFF;
 }
 
 .qa-expand-icon {

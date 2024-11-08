@@ -2,6 +2,7 @@
 import React from 'react';
 import './Main1.css';
 import Image from 'next/image';
+import Footer from './Footer';
 
 const Main1 = () => {
     return (
@@ -124,7 +125,7 @@ const Main1 = () => {
             <div className="get-ability-text">Get NEW Ability</div>
             <div className="get-ability-text1">まずはお気軽に問い合わせください</div>
             
-            {/* 入力フィールドとそのテキスト、送信ボタン */}
+            {/* 入力フィードとそのキスト、送信ボタン */}
             <div className="input-field">
                 <div className="input-text">Contact</div>
                 <div className="submit-button">
@@ -153,27 +154,254 @@ const Main1 = () => {
                 />
                 {/* QA コンテンツ用のFrame */}
                 <div className="qa-content-frame">
-                    <div className="qa-item">
+                    {/* 1つ目のンテナ */}
+                    <div className="qa-item" style={{ position: 'relative' }}>
                         {/* Q1テキスト */}
-                        <div className="qa-q-label">Q</div>
+                        <div className="qa-q-label" style={{
+                            position: 'absolute',
+                            width: '16px',
+                            height: '29px',
+                            top: '17px',
+                            left: '32px',
+                            gap: '0px',
+                            opacity: '1',
+                            fontFamily: 'Noto Sans JP',
+                            fontSize: '20px',
+                            fontWeight: '700',
+                            lineHeight: '28.96px',
+                            letterSpacing: '0.1em',
+                            textAlign: 'left',
+                            textUnderlinePosition: 'from-font',
+                            textDecorationSkipInk: 'none',
+                            color: '#FFFFFF'
+                        }}>Q</div>
                         
-                        {/* 縦ライン */}
-                        <div className="qa-vertical-line"></div>
+                        {/* 画像を追加 */}
+                        <img 
+                            src="/images/Vector 16.svg" 
+                            alt="vertical line" 
+                            style={{
+                                width: '0px', // 幅を0pxに設定
+                                height: '65px', // 高さを65pxに設定
+                                position: 'absolute', // 位置を絶対に設定
+                                top: '1px', // 上からの位置を1pxに設定
+                                left: '79px', // 左からの位置を79pxに設定
+                                opacity: '1', // 不透明度を1に設定
+                                display: 'block', // ブロック要素として表示
+                                margin: '0', // ��ージンを0に設定
+                                border: '1.5px solid transparent', // ボーダーを設定
+                            }} 
+                        />
                         
                         {/* 質問テキスト */}
                         <div className="qa-question-text">返金は可能か</div>
-                        
-                        {/* Vector 16 アイコン */}
-                        <Image 
-                            src="/images/Vector 16.svg"
-                            alt="expand"
-                            width={24}
-                            height={24}
-                            className="qa-expand-icon"
-                        />
+                    </div>
+
+                    {/* 2つ目のコンテナ */}
+                    <div className="qa-item" style={{ 
+                        width: '726px',
+                        height: '183px',
+                        position: 'relative',
+                        top: '16px',
+                        gap: '0px',
+                        borderRadius: '12px',
+                        border: '1.5px solid #FFFFFF',
+                        opacity: '1',
+                        background: 'transparent',
+                    }}>
+                        {/* Q テキスト */}
+                        <div className="qa-q-label" style={{
+                            position: 'absolute',
+                            width: '16px',
+                            height: '29px',
+                            top: '17px',
+                            left: '32px',
+                            gap: '0px',
+                            opacity: '1',
+                            fontFamily: 'Noto Sans JP',
+                            fontSize: '20px',
+                            fontWeight: '700',
+                            lineHeight: '28.96px',
+                            letterSpacing: '0.1em',
+                            textAlign: 'left',
+                            textUnderlinePosition: 'from-font',
+                            textDecorationSkipInk: 'none',
+                            color: '#FFFFFF'
+                        }}>Q</div>
+
+                        {/* 質問テキスト - widthを調整 */}
+                        <div style={{
+                            width: '200px',  // 修正: 130px から 200px に変更
+                            height: '28px',
+                            position: 'absolute',
+                            top: '17px',
+                            left: '111px',
+                            gap: '0px',
+                            opacity: '1',
+                            fontFamily: 'Noto Sans JP',
+                            fontSize: '20px',
+                            fontWeight: '700',
+                            lineHeight: '28px',
+                            letterSpacing: '0.1em',
+                            textAlign: 'left',
+                            textUnderlinePosition: 'from-font',
+                            textDecorationSkipInk: 'none',
+                            color: '#FFFFFF'
+                        }}>返金は可能か</div>
+
+                        {/* 横線（1本のみ） */}
+                        <div style={{
+                            width: '726px',
+                            height: '0px',
+                            position: 'absolute',
+                            top: '66px',
+                            left: '0',
+                            borderTop: '1.5px solid #FFFFFF',
+                            opacity: '1',
+                        }} />
+
+                        {/* A テキスト */}
+                        <div className="qa-q-label" style={{
+                            position: 'absolute',
+                            width: '16px',
+                            height: '29px',
+                            top: '94px',
+                            left: '32px',
+                            gap: '0px',
+                            opacity: '1',
+                            fontFamily: 'Noto Sans JP',
+                            fontSize: '20px',
+                            fontWeight: '700',
+                            lineHeight: '28.96px',
+                            letterSpacing: '0.1em',
+                            textAlign: 'left',
+                            textUnderlinePosition: 'from-font',
+                            textDecorationSkipInk: 'none',
+                            color: '#FFFFFF'
+                        }}>A</div>
+                    </div>
+
+                    {/* 回答テキスト - widthを調整 */}
+                    <div style={{
+                        width: '500px',
+                        height: '56px',
+                        position: 'absolute',
+                        top: '177px',
+                        left: '111px',
+                        gap: '0px',
+                        opacity: '1',
+                        fontFamily: 'Noto Sans JP',
+                        fontSize: '20px',
+                        fontWeight: '700',
+                        lineHeight: '28px',
+                        letterSpacing: '0.1em',
+                        textAlign: 'left',
+                        textUnderlinePosition: 'from-font',
+                        textDecorationSkipInk: 'none',
+                        color: '#FFFFFF'
+                    }}>3ヶ月以内であれば可能で���。<br/>質問に対しての回答を入れます</div>
+
+                    {/* 3つ目のコンテナ */}
+                    <div className="qa-item" style={{ 
+                        width: '726px',
+                        height: '66px',  // 高さを短く
+                        position: 'relative',
+                        top: '32px',  // 16px × 2 で上のコンテナとの間隔を設定
+                        gap: '0px',
+                        borderRadius: '12px',
+                        border: '1.5px solid #FFFFFF',
+                        opacity: '1',
+                        background: 'transparent',
+                    }}>
+                        {/* Q テキスト */}
+                        <div className="qa-q-label" style={{
+                            position: 'absolute',
+                            width: '16px',
+                            height: '29px',
+                            top: '17px',
+                            left: '32px',
+                            gap: '0px',
+                            opacity: '1',
+                            fontFamily: 'Noto Sans JP',
+                            fontSize: '20px',
+                            fontWeight: '700',
+                            lineHeight: '28.96px',
+                            letterSpacing: '0.1em',
+                            textAlign: 'left',
+                            color: '#FFFFFF'
+                        }}>Q</div>
+
+                        {/* 質問テキスト */}
+                        <div style={{
+                            width: '200px',
+                            height: '28px',
+                            position: 'absolute',
+                            top: '17px',
+                            left: '111px',
+                            gap: '0px',
+                            opacity: '1',
+                            fontFamily: 'Noto Sans JP',
+                            fontSize: '20px',
+                            fontWeight: '700',
+                            lineHeight: '28px',
+                            letterSpacing: '0.1em',
+                            textAlign: 'left',
+                            color: '#FFFFFF'
+                        }}>返金は可能か</div>
+                    </div>
+
+                    {/* 4つ目のコンテナ */}
+                    <div className="qa-item" style={{ 
+                        width: '726px',
+                        height: '66px',
+                        position: 'relative',
+                        top: '48px',  // 16px × 3 で上のコンテナとの間隔を設定
+                        gap: '0px',
+                        borderRadius: '12px',
+                        border: '1.5px solid #FFFFFF',
+                        opacity: '1',
+                        background: 'transparent',
+                    }}>
+                        {/* Q テキスト */}
+                        <div className="qa-q-label" style={{
+                            position: 'absolute',
+                            width: '16px',
+                            height: '29px',
+                            top: '17px',
+                            left: '32px',
+                            gap: '0px',
+                            opacity: '1',
+                            fontFamily: 'Noto Sans JP',
+                            fontSize: '20px',
+                            fontWeight: '700',
+                            lineHeight: '28.96px',
+                            letterSpacing: '0.1em',
+                            textAlign: 'left',
+                            color: '#FFFFFF'
+                        }}>Q</div>
+
+                        {/* 質問テキスト */}
+                        <div style={{
+                            width: '200px',
+                            height: '28px',
+                            position: 'absolute',
+                            top: '17px',
+                            left: '111px',
+                            gap: '0px',
+                            opacity: '1',
+                            fontFamily: 'Noto Sans JP',
+                            fontSize: '20px',
+                            fontWeight: '700',
+                            lineHeight: '28px',
+                            letterSpacing: '0.1em',
+                            textAlign: 'left',
+                            color: '#FFFFFF'
+                        }}>返金は可能か</div>
                     </div>
                 </div>
             </div>
+
+            <Footer />
         </div>
     );
 };
