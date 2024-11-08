@@ -146,3 +146,16 @@
     text-decoration-skip-ink: none;
     color: #626262;  /* backgroundではなくcolor指定に変更 */
 }
+
+/* 新しい最下部コンテナ */
+.bottom-container {
+    width: 1360px;
+    height: 213px;
+    position: absolute;
+    top: 4600px;
+    left: 0;
+    gap: 0px;
+    border-radius: 12px;
+    opacity: 0.8;
+    background: linear-gradient(90deg, #FF4747 0%, #FFE27B 100%);
+}
