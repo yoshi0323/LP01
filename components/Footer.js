@@ -82,6 +82,46 @@ const Footer = () => {
                 </div>
             </div>
 
+            {/* 左側のスクロールボタン */}
+            <div style={{
+                width: '60px',
+                height: '60px',
+                flexShrink: 0,
+                position: 'absolute',
+                left: '457px', // 左から457pxの位置
+                top: '4361px', // 上から4361pxの位置
+                cursor: 'pointer'
+            }}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+                    <circle cx="30" cy="30" r="30" transform="rotate(-180 30 30)" fill="url(#paint0_linear_1236_5154)"/>
+                    <path d="M35 43L22 30L35 17" stroke="white" strokeWidth="2"/>
+                    <defs>
+                        <linearGradient id="paint0_linear_1236_5154" x1="1.90735e-06" y1="30" x2="60" y2="30" gradientUnits="userSpaceOnUse">
+                            <stop stopColor="#FF4747"/>
+                            <stop offset="1" stopColor="#FFE27B"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+
+            {/* 右側のスクロールボタン */}
+            <div style={{
+                width: '60px',
+                height: '60px',
+                flexShrink: 0,
+                position: 'absolute',
+                right: '459px', // 右から459pxの位置
+                top: '4361px', // 上から4361pxの位置
+                cursor: 'pointer'
+            }}>
+                <Image
+                    src="/images/Group 323.svg" // 右側のアイコンのパス
+                    alt="Scroll Right"
+                    width={60}
+                    height={60}
+                />
+            </div>
+
             {/* 最下部コンテナ */}
             <div className="bottom-container"></div>
         </div>

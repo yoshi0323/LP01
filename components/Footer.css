@@ -29,23 +29,28 @@
     top: 4251px;
     gap: 0px;
     border-radius: 12px;
-    opacity: 1;
     overflow: hidden;
 }
 
 /* 左側のカード */
 .left-card {
     left: 193px;
+    opacity: 0.2;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 /* 中央のカード */
 .center-card {
     left: 557px;
+    opacity: 1;
+    background-color: white;
 }
 
 /* 右側のカード */
 .right-card {
-    left: 921px;  /* 557px + 364px（カード間の距離） */
+    left: 921px;
+    opacity: 0.2;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 /* 角を丸くするための疑似要素 */
