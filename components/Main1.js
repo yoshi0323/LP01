@@ -227,7 +227,7 @@ const Main1 = () => {
                         <div 
                             style={{
                                 width: '0px',
-                                height: '65px',
+                                height: '61px',
                                 position: 'absolute',
                                 top: '0px',
                                 left: '79px',
@@ -242,9 +242,9 @@ const Main1 = () => {
                         {/* 質問テキスト */}
                         <div className="qa-question-text">返金は可能か</div>
 
-                        {/* 修正: アイコンの位置を調整 */}
+                        {/* 下向きアイコンを追加 */}
                         <Image 
-                            src="/images/Group 311 (3).svg"
+                            src="/images/Group 311 (2).svg"
                             alt="expand"
                             width={38}
                             height={38}
@@ -268,6 +268,7 @@ const Main1 = () => {
                         border: '1.5px solid #FFFFFF',
                         opacity: '1',
                         background: 'transparent',
+                        marginBottom: '16px'
                     }}>
                         {/* Q テキスト */}
                         <div className="qa-q-label">Q</div>
@@ -276,7 +277,7 @@ const Main1 = () => {
                         <div 
                             style={{
                                 width: '0px',
-                                height: '65px',
+                                height: '63px',
                                 position: 'absolute',
                                 top: '0px',
                                 left: '79px',
@@ -294,7 +295,7 @@ const Main1 = () => {
                                 width: '726px',
                                 height: '0px',
                                 position: 'absolute',
-                                top: '65px',
+                                top: '63px',
                                 left: '0px',
                                 opacity: '1',
                                 borderTop: '1.5px solid #FFFFFF'
@@ -364,7 +365,7 @@ const Main1 = () => {
                         <div 
                             style={{
                                 width: '0px',
-                                height: '65px',
+                                height: '61px',
                                 position: 'absolute',
                                 top: '0px',
                                 left: '79px',
@@ -403,7 +404,7 @@ const Main1 = () => {
                         <div 
                             style={{
                                 width: '0px',
-                                height: '65px',
+                                height: '61px',
                                 position: 'absolute',
                                 top: '0px',
                                 left: '79px',
