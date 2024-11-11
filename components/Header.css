@@ -16,14 +16,32 @@
 
 .left-background {
     width: 1439px;
-    height: 854px;
-    flex-shrink: 0;
+    height: 853.5px;
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0.3;
-    background: linear-gradient(164.74deg, #FF4948 47.94%, rgba(246, 248, 251, 0) 98.96%);
-    clip-path: path('M0.00012207 -6.29007e-05C453.894 760.414 1063.14 808.089 1439 744.681L1439 853.5L-3.73077e-05 853.5L0.00012207 -6.29007e-05Z');
+    gap: 0px;
+}
+
+.left-background path {
+    fill: url(#paint0_linear_1206_2838);
+}
+
+#paint0_linear_1206_2838 {
+    gradientUnits: userSpaceOnUse;
+    gradientTransform: rotate(164.74deg);
+}
+
+#paint0_linear_1206_2838 stop:first-child {
+    offset: 0.4794;
+    stop-color: #FF4948;
+}
+
+#paint0_linear_1206_2838 stop:last-child {
+    offset: 0.9896;
+    stop-color: #F6F8FB;
+    stop-opacity: 0;
 }
 
 .right-background {
@@ -45,9 +63,9 @@
     background: linear-gradient(90deg, #FF4747 0%, #FFE27B 100%);
     filter: blur(40px);
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 19px;
+    left: 66px;
+    gap: 0px;
 }
 
 .content {
@@ -116,25 +134,28 @@
     border-radius: 8px;
     border: 1px solid #FF9662;
     background: linear-gradient(90deg, rgba(255, 71, 71, 0.9), rgba(255, 226, 123, 0.9));
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
 }
 
 .contact-text {
-    width: 51px;
-    height: 19px;
-    gap: 0px;
-    opacity: 1;
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 13px;
     font-weight: 700;
     line-height: 18.82px;
     text-align: center;
     color: #FFFFFF;
-    background: transparent;
-    position: relative;
+    margin: 0;
     padding: 0;
+    white-space: nowrap;
 }
 
 .image {

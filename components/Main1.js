@@ -7,6 +7,70 @@ import Footer from './Footer';
 const Main1 = () => {
     return (
         <div className="main1-container">
+            {/* グラデーション背景の半円 */}
+            <div className="gradient-background">
+                <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="1440" 
+                    height="812" 
+                    viewBox="0 0 1440 812" 
+                    fill="none"
+                    style={{
+                        position: 'absolute',
+                        top: '2821px',
+                        left: '0',
+                        zIndex: '-1'
+                    }}
+                >
+                    <g opacity="0.3" filter="url(#filter0_d_1207_2881)">
+                        <path 
+                            d="M0 744C0 -94.6157 1440 -134.486 1440 744C1440 744 719.342 744 398.684 744L0 744Z" 
+                            fill="url(#paint0_linear_1207_2881)" 
+                            shapeRendering="geometricPrecision"
+                        />
+                    </g>
+                    <defs>
+                        <filter 
+                            id="filter0_d_1207_2881" 
+                            x="-104" 
+                            y="0" 
+                            width="1608" 
+                            height="812" 
+                            filterUnits="userSpaceOnUse" 
+                            colorInterpolationFilters="sRGB"
+                        >
+                            <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                            <feColorMatrix 
+                                in="SourceAlpha" 
+                                type="matrix" 
+                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" 
+                                result="hardAlpha"
+                            />
+                            <feOffset dx="-20" dy="-16"/>
+                            <feGaussianBlur stdDeviation="42"/>
+                            <feComposite in2="hardAlpha" operator="out"/>
+                            <feColorMatrix 
+                                type="matrix" 
+                                values="0 0 0 0 0.965486 0 0 0 0 0.727181 0 0 0 0 0.447433 0 0 0 1 0"
+                            />
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1207_2881"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1207_2881" result="shape"/>
+                        </filter>
+                        <linearGradient 
+                            id="paint0_linear_1207_2881" 
+                            x1="720" 
+                            y1="0" 
+                            x2="720" 
+                            y2="744" 
+                            gradientUnits="userSpaceOnUse"
+                        >
+                            <stop offset="0" stopColor="#FFDA79"/>
+                            <stop offset="1" stopColor="#F6F8FB" stopOpacity="0"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+
             <div className="menu-text">Menu</div>
             <div className="menu-description">適切なメニューをお選びいただけます。</div>
             
@@ -157,44 +221,40 @@ const Main1 = () => {
                     {/* 1つ目のンテナ */}
                     <div className="qa-item" style={{ position: 'relative' }}>
                         {/* Q1テキスト */}
-                        <div className="qa-q-label" style={{
-                            position: 'absolute',
-                            width: '16px',
-                            height: '29px',
-                            top: '17px',
-                            left: '32px',
-                            gap: '0px',
-                            opacity: '1',
-                            fontFamily: 'Noto Sans JP',
-                            fontSize: '20px',
-                            fontWeight: '700',
-                            lineHeight: '28.96px',
-                            letterSpacing: '0.1em',
-                            textAlign: 'left',
-                            textUnderlinePosition: 'from-font',
-                            textDecorationSkipInk: 'none',
-                            color: '#FFFFFF'
-                        }}>Q</div>
+                        <div className="qa-q-label">Q</div>
                         
-                        {/* 画像を追加 */}
-                        <img 
-                            src="/images/Vector 16.svg" 
-                            alt="vertical line" 
+                        {/* 縦線 - 仕様に合わせて修正 */}
+                        <div 
                             style={{
-                                width: '0px', // 幅を0pxに設定
-                                height: '65px', // 高さを65pxに設定
-                                position: 'absolute', // 位置を絶対に設定
-                                top: '1px', // 上からの位置を1pxに設定
-                                left: '79px', // 左からの位置を79pxに設定
-                                opacity: '1', // 不透明度を1に設定
-                                display: 'block', // ブロック要素として表示
-                                margin: '0', // ��ージンを0に設定
-                                border: '1.5px solid transparent', // ボーダーを設定
+                                width: '0px',
+                                height: '65px',
+                                position: 'absolute',
+                                top: '0px',
+                                left: '79px',
+                                opacity: '1',
+                                display: 'block',
+                                margin: '0',
+                                flexShrink: '0',
+                                borderLeft: '1.5px solid #FFFFFF'
                             }} 
                         />
                         
                         {/* 質問テキスト */}
                         <div className="qa-question-text">返金は可能か</div>
+
+                        {/* 修正: アイコンの位置を調整 */}
+                        <Image 
+                            src="/images/Group 311 (3).svg"
+                            alt="expand"
+                            width={38}
+                            height={38}
+                            priority
+                            style={{
+                                position: 'absolute',
+                                top: '14px',
+                                right: '14px'
+                            }}
+                        />
                     </div>
 
                     {/* 2つ目のコンテナ */}
@@ -210,31 +270,62 @@ const Main1 = () => {
                         background: 'transparent',
                     }}>
                         {/* Q テキスト */}
-                        <div className="qa-q-label" style={{
+                        <div className="qa-q-label">Q</div>
+                        
+                        {/* 縦線 */}
+                        <div 
+                            style={{
+                                width: '0px',
+                                height: '65px',
+                                position: 'absolute',
+                                top: '0px',
+                                left: '79px',
+                                opacity: '1',
+                                display: 'block',
+                                margin: '0',
+                                flexShrink: '0',
+                                borderLeft: '1.5px solid #FFFFFF'
+                            }} 
+                        />
+
+                        {/* 横線 */}
+                        <div 
+                            style={{
+                                width: '726px',
+                                height: '0px',
+                                position: 'absolute',
+                                top: '65px',
+                                left: '0px',
+                                opacity: '1',
+                                borderTop: '1.5px solid #FFFFFF'
+                            }} 
+                        />
+                        
+                        {/* 質問テキスト */}
+                        <div className="qa-question-text">返金は可能か</div>
+
+                        {/* A テキスト - 正確なタイポグラフィーで修正 */}
+                        <div style={{
                             position: 'absolute',
                             width: '16px',
                             height: '29px',
-                            top: '17px',
+                            top: '89px',
                             left: '32px',
-                            gap: '0px',
-                            opacity: '1',
-                            fontFamily: 'Noto Sans JP',
+                            color: '#FFF',
+                            fontFamily: '"Noto Sans JP"',
                             fontSize: '20px',
-                            fontWeight: '700',
-                            lineHeight: '28.96px',
-                            letterSpacing: '0.1em',
-                            textAlign: 'left',
-                            textUnderlinePosition: 'from-font',
-                            textDecorationSkipInk: 'none',
-                            color: '#FFFFFF'
-                        }}>Q</div>
+                            fontStyle: 'normal',
+                            fontWeight: 700,
+                            lineHeight: 'normal',
+                            letterSpacing: '2px'
+                        }}>A</div>
 
-                        {/* 質問テキスト - widthを調整 */}
+                        {/* 回答テキスト */}
                         <div style={{
-                            width: '200px',  // 修正: 130px から 200px に変更
-                            height: '28px',
+                            width: '500px',
+                            height: '56px',
                             position: 'absolute',
-                            top: '17px',
+                            top: '89px',
                             left: '111px',
                             gap: '0px',
                             opacity: '1',
@@ -247,59 +338,8 @@ const Main1 = () => {
                             textUnderlinePosition: 'from-font',
                             textDecorationSkipInk: 'none',
                             color: '#FFFFFF'
-                        }}>返金は可能か</div>
-
-                        {/* 横線（1本のみ） */}
-                        <div style={{
-                            width: '726px',
-                            height: '0px',
-                            position: 'absolute',
-                            top: '66px',
-                            left: '0',
-                            borderTop: '1.5px solid #FFFFFF',
-                            opacity: '1',
-                        }} />
-
-                        {/* A テキスト */}
-                        <div className="qa-q-label" style={{
-                            position: 'absolute',
-                            width: '16px',
-                            height: '29px',
-                            top: '94px',
-                            left: '32px',
-                            gap: '0px',
-                            opacity: '1',
-                            fontFamily: 'Noto Sans JP',
-                            fontSize: '20px',
-                            fontWeight: '700',
-                            lineHeight: '28.96px',
-                            letterSpacing: '0.1em',
-                            textAlign: 'left',
-                            textUnderlinePosition: 'from-font',
-                            textDecorationSkipInk: 'none',
-                            color: '#FFFFFF'
-                        }}>A</div>
+                        }}>3ヶ月以内でれば可能で。<br/>質問に対しての回答を入れます</div>
                     </div>
-
-                    {/* 回答テキスト - widthを調整 */}
-                    <div style={{
-                        width: '500px',
-                        height: '56px',
-                        position: 'absolute',
-                        top: '177px',
-                        left: '111px',
-                        gap: '0px',
-                        opacity: '1',
-                        fontFamily: 'Noto Sans JP',
-                        fontSize: '20px',
-                        fontWeight: '700',
-                        lineHeight: '28px',
-                        letterSpacing: '0.1em',
-                        textAlign: 'left',
-                        textUnderlinePosition: 'from-font',
-                        textDecorationSkipInk: 'none',
-                        color: '#FFFFFF'
-                    }}>3ヶ月以内であれば可能で���。<br/>質問に対しての回答を入れます</div>
 
                     {/* 3つ目のコンテナ */}
                     <div className="qa-item" style={{ 
@@ -328,6 +368,8 @@ const Main1 = () => {
                             lineHeight: '28.96px',
                             letterSpacing: '0.1em',
                             textAlign: 'left',
+                            textUnderlinePosition: 'from-font',
+                            textDecorationSkipInk: 'none',
                             color: '#FFFFFF'
                         }}>Q</div>
 
@@ -346,6 +388,8 @@ const Main1 = () => {
                             lineHeight: '28px',
                             letterSpacing: '0.1em',
                             textAlign: 'left',
+                            textUnderlinePosition: 'from-font',
+                            textDecorationSkipInk: 'none',
                             color: '#FFFFFF'
                         }}>返金は可能か</div>
                     </div>
@@ -362,7 +406,7 @@ const Main1 = () => {
                         opacity: '1',
                         background: 'transparent',
                     }}>
-                        {/* Q テキスト */}
+                        {/* Q キスト */}
                         <div className="qa-q-label" style={{
                             position: 'absolute',
                             width: '16px',

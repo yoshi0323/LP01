@@ -630,7 +630,8 @@
 
 .qa-expand-icon {
     position: absolute;
-    right: 20px;  /* 右端からの位置 */
+    right: 14px;  /* 右端からの余白 */
     top: 50%;
     transform: translateY(-50%);  /* 垂直中央揃え */
+    cursor: pointer;  /* ホバー時のカーソル */
 }

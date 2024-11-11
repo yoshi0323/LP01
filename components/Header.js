@@ -24,7 +24,7 @@ const Header = () => {
             <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 className="left-background"
-                viewBox="0 0 1439 854" 
+                viewBox="0 0 1439 853.5" 
                 fill="none"
             >
                 <path 
@@ -123,9 +123,7 @@ const Header = () => {
                     <div className="menu-item">FAQ</div>
                     <div className="menu-item">Review</div>
                 </div>
-                <div className="contact-button">
-                    <span className="contact-text">Contact</span>
-                </div>
+                <button className="contact-button">Contact</button>
             </div>
 
             {/* ヘッダーバーを追加 */}
