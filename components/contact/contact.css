@@ -1,0 +1,12 @@
+/* C:\Users\user\LPws\lpws\pages\contact.css */
+
+/* メインコンテナのスタイル */
+.main-container {
+    width: 1440px;
+    height: 1360px;
+    background: #F6F8FB;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

@@ -80,6 +80,7 @@ const Main1 = () => {
             
             {/* Plan A - 既存のコンテナ */}
             <div className="plan-container">
+                <div className="plan-gradient-overlay" />
                 <div className="plan-title">Plan</div>
                 <div className="plan-letter" style={{ background: 'linear-gradient(90deg, #FF4747 0%, #FFE27B 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>A</div>
                 <div className="price-yen">¥</div>
@@ -156,6 +157,7 @@ const Main1 = () => {
 
             {/* Plan B */}
             <div className="plan-container-b">
+                <div className="plan-gradient-overlay" />
                 <div className="plan-title">Plan</div>
                 <div className="plan-letter">B</div>
                 <div className="price-yen">¥</div>
@@ -182,6 +184,7 @@ const Main1 = () => {
 
             {/* Plan C */}
             <div className="plan-container-c">
+                <div className="plan-gradient-overlay" />
                 <div className="plan-title">Plan</div>
                 <div className="plan-letter">C</div>
                 <div className="price-yen">¥</div>
