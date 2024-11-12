@@ -5,6 +5,10 @@ import Image from 'next/image';
 import Footer from './Footer';
 
 const Main1 = () => {
+    const atex5 = () => {
+        return "AIエキスパートのコンサル";
+    };
+
     return (
         <div className="main1-container">
             {/* グラデーション背景の半円 */}
@@ -77,10 +81,18 @@ const Main1 = () => {
             {/* Plan A - 既存のコンテナ */}
             <div className="plan-container">
                 <div className="plan-title">Plan</div>
-                <div className="plan-letter">A</div>
+                <div className="plan-letter" style={{ background: 'linear-gradient(90deg, #FF4747 0%, #FFE27B 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>A</div>
                 <div className="price-yen">¥</div>
                 <div className="price-amount">300,000</div>
-                <div className="vector-6"></div>
+                
+                {/* 既存のグラデーションライン */}
+                <div className="custom-gradient-line" />
+                
+                {/* 追加のグラデーションラインを追加 */}
+                <div className="additional-gradient-line" />
+                
+                {/* さらに新しいグラデーションラインを追加 */}
+                <div className="extra-gradient-line" />
                 
                 {/* 1つ目のアイテム */}
                 <div className="check-icon">
@@ -94,6 +106,7 @@ const Main1 = () => {
                     />
                 </div>
                 <div className="atext1">7日間動画2本まで</div>
+                <div className="gradient-line" />
                 <div className="vector-7"></div>
 
                 {/* 2つ目のアイテム */}
@@ -107,7 +120,8 @@ const Main1 = () => {
                         className="check-image"
                     />
                 </div>
-                <div className="atext2">AIエキスパートのコンサル</div>
+                <div className="atext2">{atex5()}</div>
+                <div className="gradient-line" />
                 <div className="vector-8"></div>
 
                 {/* 3つ目のアイテム */}
@@ -122,6 +136,7 @@ const Main1 = () => {
                     />
                 </div>
                 <div className="atext3">動画閲覧無制限</div>
+                <div className="gradient-line" />
                 <div className="vector-9"></div>
 
                 {/* 4つ目のアイテム */}
@@ -147,6 +162,9 @@ const Main1 = () => {
                 <div className="price-amount">100,000</div>
                 <div className="vector-6"></div>
                 
+                {/* Plan B の金額の下にグラデーションラインを追加 */}
+                <div className="gradient-line" style={{ top: '302px', left: '29px' }} /> {/* 位置を調整 */}
+
                 {/* Bプランのチェックアイテム */}
                 <div className="check-icon">
                     <Image 
@@ -158,7 +176,7 @@ const Main1 = () => {
                         className="check-image"
                     />
                 </div>
-                <div className="atext1">AIエキスパートのコンサル</div>
+                <div className="atext1">{atex5()}</div>
                 <div className="vector-7"></div>
             </div>
 
@@ -170,6 +188,9 @@ const Main1 = () => {
                 <div className="price-amount">100,000</div>
                 <div className="vector-6"></div>
                 
+                {/* Plan C の金額の下にグラデーションラインを追加 */}
+                <div className="gradient-line" style={{ top: '302px', left: '29px' }} /> {/* 位置を調整 */}
+
                 {/* Cプランのチェックアイテム */}
                 <div className="check-icon">
                     <Image 
@@ -218,7 +239,7 @@ const Main1 = () => {
                 />
                 {/* QA コンテンツ用のFrame */}
                 <div className="qa-content-frame">
-                    {/* 1つ目のンテナ */}
+                    {/* 1つ目のンナ */}
                     <div className="qa-item" style={{ position: 'relative' }}>
                         {/* Q1テキスト */}
                         <div className="qa-q-label">Q</div>

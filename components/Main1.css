@@ -115,6 +115,10 @@
     
     /* テキストカラー */
     color: #FD6D6C;
+
+    /* テキストを1行に収める */
+    white-space: nowrap;
+    overflow: hidden; /* または visible */
 }
 
 .vector-6 {
@@ -258,11 +262,15 @@
     letter-spacing: 0.1em;
     text-align: left;
     color: #626262;
+
+    /* テキストを1行に収める */
+    white-space: nowrap;
+    overflow: hidden; /* または visible */
 }
 
 .atext2 { 
     top: 385px;
-    width: 200px; /* テキストが長いため幅を調整 */
+    width: 230px; /* AIエキスパートのコンサルが収まるように幅を調整 */
 }
 
 .atext3 { 
@@ -271,7 +279,7 @@
 
 .atext4 { 
     top: 505px;
-    width: 220px; /* テキストが長いため幅を調整 */
+    width: 250px; /* コミュニティ参加して質問可能が収まるように幅を調整 */
 }
 
 /* 他のスタイルは一旦コメントアウトまたは削除 */
@@ -493,11 +501,8 @@
     height: 589px;
     top: 3465px;
     left: -1px;
-    gap: 0px;
     opacity: 0.8;
     z-index: 1;
-    
-    /* グラデーション背景 */
     background: linear-gradient(90deg, #FF4747 0%, #FFE27B 100%);
 }
 
@@ -569,7 +574,7 @@
     display: flex;
     align-items: center;
     padding: 0; /* パディングを0に設定 */
-    margin: 0; /* マージンを0に設定 */
+    margin: 0; /* マーンを0に設定 */
 }
 
 .qa-q-label {
@@ -581,7 +586,7 @@
     gap: 0px;
     opacity: 1;
     
-    /* フォントスタイル */
+    /* フォントタイル */
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 20px;
     font-weight: 700;
@@ -589,7 +594,7 @@
     letter-spacing: 0.1em;
     text-align: left;
     
-    color: #FFFFFF;  /* 背景色を白から文字色を白に変更 */
+    color: #FFFFFF;  /* 背景色を白か字色を白に変更 */
 }
 
 .qa-vertical-line {
@@ -607,7 +612,7 @@
 
 .qa-question-text {
     position: absolute;
-    width: 200px; /* 幅を広げる（130px → 200px） */
+    width: 200px; /* 幅広げる（130px → 200px） */
     height: 28px;
     top: 18px;
     left: 111px;
@@ -634,4 +639,169 @@
     top: 50%;
     transform: translateY(-50%);  /* 垂直中央揃え */
     cursor: pointer;  /* ホバー時のカーソル */
+}
+
+.gradient-line {
+    position: absolute;
+    width: 271px; /* ラインの幅 */
+    height: 1px; /* ラインの高さ */
+    background: linear-gradient(90deg, #FF4747 0%, #FFE27B 100%); /* グラデーションの色 */
+    z-index: 1; /* 他の要素の上に表示 */
+}
+
+.custom-gradient-line {
+    position: absolute;
+    width: 271px; /* ラインの幅 */
+    height: 1px; /* ラインの高さ */
+    top: 362px; /* 上辺からの位置 */
+    left: 29px; /* 左辺からの位置 */
+    background: linear-gradient(90deg, #FF4747 0%, #FFE27B 100%); /* グラデーションの色 */
+    z-index: 1; /* 他の要素の上に表示 */
+}
+
+.additional-gradient-line {
+    position: absolute;
+    width: 271px; /* ラインの幅 */
+    height: 1px; /* ラインの高さ */
+    top: 422px; /* 上辺からの位置 */
+    left: 29px; /* 左辺からの位置 */
+    background: linear-gradient(90deg, #FF4747 0%, #FFE27B 100%); /* グラデーションの色 */
+    z-index: 1; /* 他の要素の上に表示 */
+}
+
+.extra-gradient-line {
+    position: absolute;
+    width: 271px; /* ラインの幅 */
+    height: 1px; /* ラインのさ */
+    top: 482px; /* 上辺からの位置 */
+    left: 29px; /* 左辺からの位�� */
+    background: linear-gradient(90deg, #FF4747 0%, #FFE27B 100%); /* グラデーションの色 */
+    z-index: 1; /* 他の要素の上に表示 */
+}
+
+/* atext2のスタイルを更新 */
+.atext2 {
+    position: absolute;
+    width: 125px;
+    height: 28px;
+    left: 55px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    color: #626262;
+}
+
+.atext2 { 
+    top: 385px;
+    width: 200px; /* テキストが長いため幅を調整 */
+}
+
+.atext3 { 
+    top: 445px;
+}
+
+.atext4 { 
+    top: 505px;
+    width: 220px; /* テキストが長いため幅を調整 */
+}
+
+/* Plan Bのテキストスタイル */
+.plan-container-b .atext1 {
+    position: absolute;
+    width: 150px; /* 幅を調整して1行に収まるように */
+    height: 28px;
+    left: 55px; /* 位置を調整 */
+    top: 385px; /* 現在の位置を維持 */
+    
+    /* タイポグラフィーの設定 */
+    color: var(--gray, #626262); /* グレーの色 */
+    font-family: "Noto Sans JP"; /* フォントファミリー */
+    font-size: 14px; /* フォントサイズ */
+    font-style: normal; /* フォントスタイル */
+    font-weight: 400; /* フォントウェイト */
+    line-height: 28px; /* 行の高さ */
+
+    /* テキストを1行に収める設定 */
+    white-space: nowrap; /* 1行にする */
+    overflow: hidden; /* はみ出した部分を隠す */
+    text-overflow: ellipsis; /* 必要に応じて省略記号を表示 */
+}
+
+/* Plan Cのテキストスタイル */
+.plan-container-c .atext1 {
+    position: absolute;
+    width: 150px; /* 幅を調整して1行に収まるように */
+    height: 28px;
+    left: 55px; /* 位置を調整 */
+    top: 385px; /* 現在の位置を維持 */
+    
+    /* タイポグラフィーの設定 */
+    color: var(--gray, #626262); /* グレーの色 */
+    font-family: "Noto Sans JP"; /* フォントファミリー */
+    font-size: 14px; /* フォントサイズ */
+    font-style: normal; /* フォントスタイル */
+    font-weight: 400; /* フォントウェイト */
+    line-height: 28px; /* 行の高さ */
+
+    /* テキストを1行に収める設定 */
+    white-space: nowrap; /* 1行にする */
+    overflow: hidden; /* はみ出した部分を隠す */
+    text-overflow: ellipsis; /* 必要に応じて省略記号を表示 */
+}
+
+.atext1, .atext2, .atext3, .atext4 {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 1.4px;
+    color: var(--gray, #626262);
+    
+    /* テキストを1行に収める設定を追加 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Plan BとCのテキストスタイル */
+.plan-container-b .atext1,
+.plan-container-c .atext1 {
+    position: absolute;
+    width: 230px; /* テキストが収まるように幅を広げる */
+    height: 28px;
+    left: 55px; /* チェックアイコンの横に配置 */
+    top: 318px; /* チェックアイコンと同じ高さに調整 */
+    
+    /* タイポグラフィーの設定 */
+    color: var(--gray, #626262);
+    font-family: "Noto Sans JP";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+
+    /* テキストを1行に収める設定 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* チェックアイコンの位置も調整 */
+.plan-container-b .check-icon,
+.plan-container-c .check-icon {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 29px;
+    top: 325px;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
 }
