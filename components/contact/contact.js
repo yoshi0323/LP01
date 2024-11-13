@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import './contact.css';
 import Success from '../success/Success';
+import { useRouter } from 'next/router';
 
 function Contact() {
+    const router = useRouter();
     const [isSuccessVisible, setIsSuccessVisible] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
@@ -21,8 +23,14 @@ function Contact() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // ここでフォームのバリデーションや送信処理を追加できます
         setIsSuccessVisible(true);
+    };
+
+    const scrollToSection = (id) => {
+        const section = document.getElementById(id);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
     };
 
     return (
@@ -71,12 +79,12 @@ function Contact() {
                 </div>
                 
                 <div className="nav-menu">
-                    <a href="/" className="nav-item">TOP</a>
+                    <a href="/" className="nav-item" onClick={() => scrollToSection('top-section')}>TOP</a>
                     <a href="/about" className="nav-item">About</a>
                     <a href="/flow" className="nav-item">Flow</a>
                     <a href="/faq" className="nav-item">FAQ</a>
                     <a href="/review" className="nav-item">Review</a>
-                    <div className="contact-button">
+                    <div className="contact-button" onClick={() => scrollToSection('contact-section')}>
                         <span className="contact-text">Contact</span>
                     </div>
                 </div>

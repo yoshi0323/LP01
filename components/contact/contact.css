@@ -55,7 +55,7 @@
     top: 42px;
     left: 92.42px;
     color: #252323;
-    font-family: 'Abel', sans-serif;
+    font-family: 'Abel';
     font-size: 35.613px;
     font-style: normal;
     font-weight: 400;
@@ -78,6 +78,8 @@
 /* Contactテキストのスタイル */
 .contact-title {
     font-family: 'Abel', sans-serif;
+    top: 91px; /* 上から305pxに設定 */
+    left: 629px; /* 左から597pxに設定 */
     font-size: 60px;
     font-style: normal;
     font-weight: 400;
@@ -86,7 +88,7 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-align: center; /* 中央揃え */
+   
     margin-top: 20px; /* 上部のマージン */
 }
 
@@ -338,7 +340,10 @@
     font-weight: 400; /* フォントウェイトを400に設定 */
     line-height: normal; /* 行の高さを通常に設定 */
     z-index: 1002; /* より高い値に設定して最前面に配置 */
+    max-width: 100vw; /* ビューポート幅まで広がる */
 }
+
+
 
 /* 新しいアイコンコンテナのスタイルを追加 */
 .third-icon-container {

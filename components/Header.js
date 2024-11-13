@@ -1,10 +1,30 @@
+"use client"; // クライアントコンポーネントとしてマーク
+
 import React from 'react';
 import Image from 'next/image';
 import './Header.css';
 import Main from './Main';
 import Main1 from './Main1'; // Main1コンポーネントをインポート
+import { useRouter } from 'next/navigation'; // next/routerの代わりにnext/navigationをインポート
 
 const Header = () => {
+    const router = useRouter(); // useRouterフックを使用
+
+    const handleTopClick = () => {
+        router.push('/'); // TOPボタンがクリックされたときにルートに遷移
+    };
+
+    const scrollToSection = (id) => {
+        const section = document.getElementById(id);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' }); // スムーズにスクロール
+        }
+    };
+
+    const handleContactClick = () => {
+        router.push('/contact'); // Contactボタンがクリックされたときに/contactに遷移
+    };
+
     return (
         <header className="header">
             {/* AIテキストを最初に配置 */}
@@ -117,26 +137,28 @@ const Header = () => {
             {/* メニューボックス */}
             <div className="menu-container">
                 <div className="menu-items">
-                    <div className="menu-item">TOP</div>
-                    <div className="menu-item">About</div>
-                    <div className="menu-item">Flow</div>
-                    <div className="menu-item">FAQ</div>
-                    <div className="menu-item">Review</div>
+                    <div className="menu-item" onClick={handleTopClick}>TOP</div>
+                    <div className="menu-item" onClick={() => scrollToSection('flow-section')}>About</div>
+                    <div className="menu-item" onClick={() => scrollToSection('flow-section')}>Flow</div>
+                    <div className="menu-item" onClick={() => scrollToSection('qa-section')}>FAQ</div>
+                    <div className="menu-item" onClick={() => scrollToSection('review-section')}>Review</div>
                 </div>
-                <button className="contact-button">Contact</button>
+                <button className="contact-button" onClick={handleContactClick}>Contact</button>
             </div>
 
             {/* ヘッダーバーを追加 */}
             <div className="header-bar"></div>
 
-            {/* 既存の画像 */}
-            <Image 
-                src="/images/wes-hicks-4-EeTnaC1S4-unsplash.png"
-                alt="Description"
-                width={534}
-                height={287}
-                className="image"
-            />
+            {/* 画像セクション */}
+            <div id="image-section">
+                <Image 
+                    src="/images/wes-hicks-4-EeTnaC1S4-unsplash.png"
+                    alt="Description"
+                    width={534}
+                    height={287}
+                    className="image"
+                />
+            </div>
 
             {/* 2つ目の画像を追加 */}
             <Image 
@@ -152,6 +174,17 @@ const Header = () => {
             <div className="right-circle-gradient"></div>
             <Main />
             <Main1 />
+
+            {/* Flowのコンテンツ */}
+            <div id="flow-section" className="text-item">
+                
+            </div>
+
+            {/* QAセクション */}
+            <div id="qa-section" className="qa-text"></div>
+
+            {/* Reviewセクション */}
+            <div id="review-section" className="review-text"></div>
         </header>
     );
 };

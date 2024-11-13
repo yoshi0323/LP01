@@ -230,7 +230,7 @@ const Main1 = () => {
 
             {/* QA背景セクション */}
             <div className="qa-background">
-                <div className="qa-text">QA</div>
+                <div id="qa-section" className="qa-text">QA</div>
                 <Image 
                     src="/images/flatlay-5115827_1280 1.png"
                     alt="QA section image"

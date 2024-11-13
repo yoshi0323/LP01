@@ -126,6 +126,14 @@
     line-height: 18.82px;
     text-align: center;
     color: #252323;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.menu-item:hover {
+    text-decoration: underline;
 }
 
 .contact-button {

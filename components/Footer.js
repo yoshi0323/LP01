@@ -22,7 +22,7 @@ const Footer = () => {
 
     return (
         <div className="footer-container">
-            <div className="review-text">Review</div>
+            <div id="review-section" className="review-text">Review</div>
             
             {/* 左側のレビューカード */}
             <div className="review-card left-card" style={{ opacity: 0.2 }}>

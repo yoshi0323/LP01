@@ -279,7 +279,7 @@
 
 .atext4 { 
     top: 505px;
-    width: 250px; /* コミュニティ参加して質問可能が���まるように幅を調��� */
+    width: 250px; /* コミュニティ参加して質問可能がまるように幅��調整 */
 }
 
 /* 他のスタイルは一旦コメントアウトまたは削除 */
@@ -437,7 +437,7 @@
     position: absolute;
     width: 85px;
     height: 28px;
-    top: 18px;  /* 3159px - 3141px = 18px (親要素から���相対位置) */
+    top: 18px;  /* 3159px - 3141px = 18px (親要素から相対位置) */
     left: 30px;  /* 392px - 362px = 30px (親要素からの相対位置) */
     gap: 0px;
     opacity: 1;
@@ -711,7 +711,7 @@
 /* Plan Bのテキストスタイル */
 .plan-container-b .atext1 {
     position: absolute;
-    width: 150px; /* 幅を調整して1行に収まるように */
+    width: 150px; /* 幅を調整して1行に収まる��うに */
     height: 28px;
     left: 55px; /* 位置を調整 */
     top: 385px; /* 現在の位置を維持 */
@@ -819,4 +819,20 @@
     opacity: 0.3; /* 透過度を30%に設定 */
     pointer-events: none;
     z-index: 1;
+}
+
+.text-item {
+    display: flex; /* フレックスボックスを使用 */
+    align-items: center; /* 垂直方向に中央揃え */
+}
+
+.check-icon {
+    margin-right: 10px; /* チェックマークとテキストの間にスペースを追加 */
+    /* 必要に応じてサイズを調整 */
+}
+
+.text-content {
+    line-height: 1.5; /* 行の高さを調整 */
+    font-size: 14px; /* フォントサイズを調整 */
+    /* 他のスタイルを必要に応じて追加 */
 }
