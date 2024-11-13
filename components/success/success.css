@@ -1,0 +1,157 @@
+.success-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.success-content {
+    width: 1036px;
+    height: 592px;
+    flex-shrink: 0;
+    background: #F6F8FB;
+    position: absolute;
+    top: 145px;
+    left: 202px;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.icon-container {
+    position: absolute;
+    top: 88px;
+    left: 441px;
+    z-index: 1001;
+}
+
+.checkmark-container {
+    position: absolute;
+    top: 55px;
+    left: 45px;
+    z-index: 1002;
+}
+
+.success-title {
+    position: absolute;
+    top: 282px;
+    left: 420px;
+    font-family: 'Abel', sans-serif;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background: linear-gradient(90deg, #FF4747 0%, #FFE27B 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 1003;
+}
+
+.waiting-message {
+    position: absolute;
+    top: 371px;
+    left: 411px;
+    color: var(--gray, #626262);
+    font-family: "Noto Sans JP";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 1.4px;
+    z-index: 1004;
+}
+
+.top-button {
+    width: 268px;
+    height: 54px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: #FFFFFF;
+    position: absolute;
+    bottom: 81px;
+    left: 396px;
+    cursor: pointer;
+    overflow: hidden;
+    border: none;
+    z-index: 1005;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+.top-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(121.36% 96.06% at 0% 140.74%, #FF7F7F 0%, rgba(255, 191, 131, 0.00) 100%);
+    z-index: -1;
+    border-radius: 12px;
+    padding: 2px;
+    transition: opacity 0.3s;
+}
+
+.top-button span {
+    position: relative;
+    z-index: 1;
+    color: var(--gray, #626262);
+    font-family: "Noto Sans JP";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 1.4px;
+}
+
+.icon-arrow {
+    width: 24px;
+    height: 24px;
+}
+
+.top-button svg {
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 1;
+}
+
+.top-button:hover::before {
+    opacity: 0.8;
+}
+
+.success-content h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.success-content p {
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.close-button {
+    padding: 10px 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.close-button:hover {
+    background-color: #0056b3;
+}
