@@ -5,20 +5,54 @@
     padding: 0;
 }
 
+:root {
+    --max-width: 1440px;
+    --scale-ratio: calc(100vw / var(--max-width));
+}
+
 body {
     font-family: 'Noto Sans JP', sans-serif; /* フォントファミリーを設定 */
     color: var(--gray, #626262); /* デフォルトのテキストカラー */
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 /* 最大幅の設定 */
 .container {
-    max-width: 100vw; /* ビューポート幅まで広がる */
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    transform-origin: top left;
+}
+
+@media (max-width: 1440px) {
+    .container {
+        transform: scale(var(--scale-ratio));
+        width: calc(100% * (1 / var(--scale-ratio)));
+        height: auto;
+    }
+}
+
+/* コンテンツのスケーリングを維持するための共通クラス */
+.scale-content {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    position: relative;
+}
+
+@media (max-width: 1440px) {
+    .scale-content {
+        transform: scale(var(--scale-ratio));
+        transform-origin: top left;
+        width: calc(100% * (1 / var(--scale-ratio)));
+    }
 }
 
 /* スマートフォン用のスタイル */
 @media (max-width: 600px) {
     .container {
-        width: 100%;
         padding: 10px;
     }
 }
@@ -26,7 +60,6 @@ body {
 /* タブレット用のスタイル */
 @media (min-width: 601px) and (max-width: 1024px) {
     .container {
-        width: 80%;
         padding: 20px;
     }
 }

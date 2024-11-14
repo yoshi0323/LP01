@@ -151,7 +151,7 @@
     line-height: 28px;
     text-align: left;
     
-    /* テキストカラー */
+    /* テキストカラ�� */
     color: #626262;
 }
 
@@ -279,7 +279,7 @@
 
 .atext4 { 
     top: 505px;
-    width: 250px; /* コミュニティ参加して質問可能がまるように幅��調整 */
+    width: 250px; /* コミュニティ参加して質問可能がまるように幅調整 */
 }
 
 /* 他のスタイルは一旦コメントアウトまたは削除 */
@@ -711,7 +711,7 @@
 /* Plan Bのテキストスタイル */
 .plan-container-b .atext1 {
     position: absolute;
-    width: 150px; /* 幅を調整して1行に収まる��うに */
+    width: 150px; /* 幅を調整して1行に収まるうに */
     height: 28px;
     left: 55px; /* 位置を調整 */
     top: 385px; /* 現在の位置を維持 */
@@ -835,4 +835,32 @@
     line-height: 1.5; /* 行の高さを調整 */
     font-size: 14px; /* フォントサイズを調整 */
     /* 他のスタイルを必要に応じて追加 */
+}
+
+/* 既存のスタイルに追加 */
+.right-circle-gradient {
+    width: 444px;
+    height: 265px;
+    flex-shrink: 0;
+    border-radius: 444px;
+    opacity: 0.2;
+    background: linear-gradient(90deg, #FF4747 0%, #FFE27B 100%);
+    filter: blur(80px);
+    position: absolute;
+    top: 395px;
+    right: 10%; /* 固定値から相対値に変更 */
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1440px) {
+    .right-circle-gradient {
+        right: 5%; /* 画面が小さくなった時の位置調整 */
+    }
+}
+
+@media (max-width: 1024px) {
+    .right-circle-gradient {
+        right: 2%; /* さらに画面が小さくなった時の位置調整 */
+        width: 300px; /* 必要に応じてサイズも調整 */
+    }
 }

@@ -26,11 +26,14 @@ function Contact() {
         setIsSuccessVisible(true);
     };
 
-    const scrollToSection = (id) => {
-        const section = document.getElementById(id);
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
+    const handleNavigation = async (path, sectionId) => {
+        await router.push(path);
+        setTimeout(() => {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }, 100);
     };
 
     return (
@@ -79,12 +82,12 @@ function Contact() {
                 </div>
                 
                 <div className="nav-menu">
-                    <a href="/" className="nav-item" onClick={() => scrollToSection('top-section')}>TOP</a>
-                    <a href="/about" className="nav-item">About</a>
-                    <a href="/flow" className="nav-item">Flow</a>
-                    <a href="/faq" className="nav-item">FAQ</a>
-                    <a href="/review" className="nav-item">Review</a>
-                    <div className="contact-button" onClick={() => scrollToSection('contact-section')}>
+                    <a href="#" className="nav-item" onClick={() => handleNavigation('/', 'top-section')}>TOP</a>
+                    <a href="#" className="nav-item" onClick={() => handleNavigation('/', 'image-section')}>About</a>
+                    <a href="#" className="nav-item" onClick={() => handleNavigation('/', 'flow-section')}>Flow</a>
+                    <a href="#" className="nav-item" onClick={() => handleNavigation('/', 'faq-section')}>FAQ</a>
+                    <a href="#" className="nav-item" onClick={() => handleNavigation('/', 'review-section')}>Review</a>
+                    <div className="contact-button" onClick={() => handleNavigation('/', 'contact-section')}>
                         <span className="contact-text">Contact</span>
                     </div>
                 </div>
@@ -173,20 +176,6 @@ function Contact() {
                 <span className="footer-text">AIbility</span>
             </div>
 
-            {/* アイコンを追加 */}
-            <div className="icon-container">
-                <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    width="7" 
-                    height="7" 
-                    viewBox="0 0 7 7" 
-                    fill="none"
-                    style={{ display: 'block' }} // SVG表示を確実にする
-                >
-                    <circle cx="3.5" cy="3.5" r="3.5" fill="#FFF"/>
-                </svg>
-            </div>
-
             {/* 新しいアイコンを追加 */}
             <div className="new-icon-container">
                 <svg 
@@ -223,6 +212,20 @@ function Contact() {
 
             {/* 運用会社のテキストを追加 */}
             <div className="company-text">運用会社</div>
+
+            {/* プライバシーポリシー横のアイコン */}
+            <div className="footer-dot-icon">
+                <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="7" 
+                    height="7" 
+                    viewBox="0 0 7 7" 
+                    fill="none"
+                    style={{ display: 'block' }}
+                >
+                    <circle cx="3.5" cy="3.5" r="3.5" fill="#FFF"/>
+                </svg>
+            </div>
         </div>
     );
 }

@@ -138,7 +138,7 @@ const Header = () => {
             <div className="menu-container">
                 <div className="menu-items">
                     <div className="menu-item" onClick={handleTopClick}>TOP</div>
-                    <div className="menu-item" onClick={() => scrollToSection('flow-section')}>About</div>
+                    <div className="menu-item" onClick={() => scrollToSection('about-section')}>About</div>
                     <div className="menu-item" onClick={() => scrollToSection('flow-section')}>Flow</div>
                     <div className="menu-item" onClick={() => scrollToSection('qa-section')}>FAQ</div>
                     <div className="menu-item" onClick={() => scrollToSection('review-section')}>Review</div>
@@ -150,7 +150,7 @@ const Header = () => {
             <div className="header-bar"></div>
 
             {/* 画像セクション */}
-            <div id="image-section">
+            <div id="about-section">
                 <Image 
                     src="/images/wes-hicks-4-EeTnaC1S4-unsplash.png"
                     alt="Description"
