@@ -89,3 +89,18 @@ body {
 /* その他の共通スタイルを追加 */
 
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+/* アニメーション用の最適化 */
+.flow-item {
+    transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* グラデーションテキスト用の共通スタイル */
+.gradient-text {
+    background: linear-gradient(90deg, #FF4747 0%, #FFE27B 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
