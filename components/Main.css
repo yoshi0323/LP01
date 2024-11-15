@@ -1,7 +1,9 @@
 /* C:\Users\user\LPws\lpws\components\Main.css */
 .main-container {
-    position: relative;
-    margin-top: 50px; /* Headerの高さに応じて調整 */
+    width: 100%; /* 幅を100%に設定 */
+    max-width: 1440px; /* 最大幅を1440pxに設定 */
+    margin: 0 auto; /* 中央寄せ */
+    position: relative; /* 相対位置 */
 }
 
 .text-item {
@@ -542,4 +544,13 @@
     gap: 20px;
     justify-content: center;
     margin-top: 50px;
+}
+
+@media (max-width: 1024px) {
+    .gradient-line {
+        /* スマホやタブレット用の調整 */
+        top: 250px; /* 位置を調整 */
+        left: 20px; /* 左からの位置を調整 */
+        width: 100%; /* 幅を100%に設定 */
+    }
 }

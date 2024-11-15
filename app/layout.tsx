@@ -24,15 +24,15 @@ const damion = Damion({
   subsets: ['latin'],
 });
 
-export const metadata: Metadata = {
-  title: "LPWS",
-  description: "Lightweight Prompt Workbench System",
-};
-
 const abel = Abel({
   weight: '400',
   subsets: ['latin'],
 });
+
+export const metadata: Metadata = {
+  title: "LPWS",
+  description: "Lightweight Prompt Workbench System",
+};
 
 export default function RootLayout({
   children,
@@ -42,8 +42,13 @@ export default function RootLayout({
   return (
     <html lang="ja" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className={`${abel.className} ${notoSansJP.className} ${damion.className} antialiased`}>
-        <div className="container">
-          {children}
+        <div className="gradient-container">
+          <div className="gradient-background" />
+        </div>
+        <div className="responsive-wrapper">
+          <main className="main-container">
+            {children}
+          </main>
         </div>
       </body>
     </html>

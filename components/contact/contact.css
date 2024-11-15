@@ -1,10 +1,28 @@
-/* メインコンテナ */
+/* レスポンシブラッパー */
+.responsive-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-x: hidden;
+}
+
+/* メインコンテナ - 既存のスタイルを維持 */
 .main-container {
     width: 1440px;
     height: 1360px;
     background: #FFFFFF;
     position: relative;
-    /* overflow: hidden を削除または visible に変更 */
+    transform-origin: top center;
+}
+
+/* メディアクエリ - スケーリングのみを行う */
+@media screen and (max-width: 1440px) {
+    .main-container {
+        transform: scale(calc(100vw / 1440));
+        margin-top: calc(-1360px * (1 - (100vw / 1440)) / 2);
+    }
 }
 
 /* 背景グラデーション */
@@ -369,4 +387,67 @@
     font-weight: 400; /* フォントウェイトを400に設定 */
     line-height: normal; /* 行の高さを通常に設定 */
     z-index: 1003; /* より高い値に設定して最前面に配置 */
+}
+
+/* フッター内のドットアイコンのスタイル */
+.footer-dot-icon {  /* クラス名を変更 */
+    position: absolute;
+    left: 92px;
+    bottom: 94px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 同様に他のドットアイコンも変更 */
+.new-icon-container {
+    /* 既存のスタイルを維持 */
+}
+
+.third-icon-container {
+    /* 既存のスタイルを維持 */
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        width: 100%; /* 幅を100%に設定 */
+        height: auto; /* 高さを自動に設定 */
+        padding: 20px; /* パディングを追加 */
+    }
+
+    .contact-title {
+        font-size: 40px; /* フォントサイズを調整 */
+        left: 50%; /* 中央に配置 */
+        transform: translateX(-50%); /* 中央寄せ */
+    }
+
+    .contact-subtitle {
+        top: 100px; /* 上からの位置を調整 */
+        left: 50%; /* 中央に配置 */
+        transform: translateX(-50%); /* 中央寄せ */
+    }
+
+    .form-container {
+        top: 200px; /* 上からの位置を調整 */
+        left: 50%; /* 中央に配置 */
+        transform: translateX(-50%); /* 中央寄せ */
+        width: 90%; /* 幅を90%に設定 */
+    }
+
+    .form-input,
+    .form-textarea {
+        width: 100%; /* 幅を100%に設定 */
+    }
+
+    .submit-container {
+        top: auto; /* 固定位置を解除 */
+        left: 50%; /* 中央に配置 */
+        transform: translateX(-50%); /* 中央寄せ */
+    }
+
+    .footer {
+        width: 100%; /* 幅を100%に設定 */
+        bottom: 20px; /* 下からの位置を調整 */
+    }
 }
