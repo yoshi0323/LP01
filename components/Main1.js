@@ -1,5 +1,5 @@
 /* C:\Users\user\LPws\lpws\components\Main1.js */
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './Main1.css';
 import Image from 'next/image';
 import Footer from './Footer';
@@ -8,6 +8,39 @@ const Main1 = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedQuestion, setSelectedQuestion] = useState(null);
     const [openIndex, setOpenIndex] = useState(null);
+
+    // Intersection Observer用のref
+    const menuSectionRef = useRef(null);
+
+    useEffect(() => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -20% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    console.log('Menu section is visible');
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const menuSection = menuSectionRef.current;
+        if (menuSection) {
+            observer.observe(menuSection);
+            console.log('Observer set up for menu section');
+        }
+
+        return () => {
+            if (menuSection) {
+                observer.unobserve(menuSection);
+            }
+        };
+    }, []);
 
     const atex5 = () => {
         return "AIエキスパートのコンサル";
@@ -116,156 +149,157 @@ const Main1 = () => {
                 </svg>
             </div>
 
-            <div className="menu-text">Menu</div>
-            <div className="menu-description">適切なメニューをお選びいただけます。</div>
-            
-            {/* Plan A - 既存のコンテナ */}
-            <div className="plan-container">
-                <div className="plan-gradient-overlay" />
-                <div className="plan-title">Plan</div>
-                <div className="plan-letter" style={{ background: 'linear-gradient(90deg, #FF4747 0%, #FFE27B 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>A</div>
-                <div className="price-yen">¥</div>
-                <div className="price-amount">300,000</div>
+            <div className="menu-section" ref={menuSectionRef}>
+                <div className="menu-text">Menu</div>
+                <div className="menu-description">適切なメニューをお選びいただけます</div>
                 
-                {/* 既存のグラデーションライン */}
-                <div className="custom-gradient-line" />
-                
-                {/* 追加のグラデーションラインを追加 */}
-                <div className="additional-gradient-line" />
-                
-                {/* さらに新しいグラデーションラインを追加 */}
-                <div className="extra-gradient-line" />
-                
-                {/* 1つ目のアイテム */}
-                <div className="check-icon">
-                    <Image 
-                        src="/images/check.svg"
-                        alt="check"
-                        width={16}
-                        height={16}
-                        priority
-                        className="check-image"
-                    />
-                </div>
-                <div className="atext1">7日間動画2本まで</div>
-                <div className="gradient-line" />
-                <div className="vector-7"></div>
+                <div className="plan-container">
+                    <div className="plan-gradient-overlay" />
+                    <div className="plan-title">Plan</div>
+                    <div className="plan-letter" style={{ background: 'linear-gradient(90deg, #FF4747 0%, #FFE27B 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>A</div>
+                    <div className="price-yen">¥</div>
+                    <div className="price-amount">300,000</div>
+                    
+                    {/* 既存のグラデーションライン */}
+                    <div className="custom-gradient-line" />
+                    
+                    {/* 追加のグラデーションラインを追加 */}
+                    <div className="additional-gradient-line" />
+                    
+                    {/* さらに新しいグラデーションラインを追加 */}
+                    <div className="extra-gradient-line" />
+                    
+                    {/* 1つ目のアイテム */}
+                    <div className="check-icon">
+                        <Image 
+                            src="/images/check.svg"
+                            alt="check"
+                            width={16}
+                            height={16}
+                            priority
+                            className="check-image"
+                        />
+                    </div>
+                    <div className="atext1">7日間動画2本まで</div>
+                    <div className="gradient-line" />
+                    <div className="vector-7"></div>
 
-                {/* 2つ目のアイテム */}
-                <div className="check-icon2">
-                    <Image 
-                        src="/images/check.svg"
-                        alt="check"
-                        width={16}
-                        height={16}
-                        priority
-                        className="check-image"
-                    />
-                </div>
-                <div className="atext2">{atex5()}</div>
-                <div className="gradient-line" />
-                <div className="vector-8"></div>
+                    {/* 2つ目のアイム */}
+                    <div className="check-icon2">
+                        <Image 
+                            src="/images/check.svg"
+                            alt="check"
+                            width={16}
+                            height={16}
+                            priority
+                            className="check-image"
+                        />
+                    </div>
+                    <div className="atext2">{atex5()}</div>
+                    <div className="gradient-line" />
+                    <div className="vector-8"></div>
 
-                {/* 3つ目のアイテム */}
-                <div className="check-icon3">
-                    <Image 
-                        src="/images/check.svg"
-                        alt="check"
-                        width={16}
-                        height={16}
-                        priority
-                        className="check-image"
-                    />
-                </div>
-                <div className="atext3">動画閲覧無制限</div>
-                <div className="gradient-line" />
-                <div className="vector-9"></div>
+                    {/* 3つ目のアイテム */}
+                    <div className="check-icon3">
+                        <Image 
+                            src="/images/check.svg"
+                            alt="check"
+                            width={16}
+                            height={16}
+                            priority
+                            className="check-image"
+                        />
+                    </div>
+                    <div className="atext3">動画閲覧無制限</div>
+                    <div className="gradient-line" />
+                    <div className="vector-9"></div>
 
-                {/* 4つ目のア���テム */}
-                <div className="check-icon4">
-                    <Image 
-                        src="/images/check.svg"
-                        alt="check"
-                        width={16}
-                        height={16}
-                        priority
-                        className="check-image"
-                    />
+                    {/* 4つ目のアテム */}
+                    <div className="check-icon4">
+                        <Image 
+                            src="/images/check.svg"
+                            alt="check"
+                            width={16}
+                            height={16}
+                            priority
+                            className="check-image"
+                        />
+                    </div>
+                    <div className="atext4">コミュニティ参加して質問可能</div>
+                    <div className="vector-10"></div>
                 </div>
-                <div className="atext4">コミュニティ参加して質問可能</div>
-                <div className="vector-10"></div>
+
+                {/* Plan B */}
+                <div className="plan-container-b">
+                    <div className="plan-gradient-overlay" />
+                    <div className="plan-title">Plan</div>
+                    <div className="plan-letter">B</div>
+                    <div className="price-yen">¥</div>
+                    <div className="price-amount">100,000</div>
+                    <div className="vector-6"></div>
+                    
+                    {/* Plan B の金額の下にグラデーションラインを追加 */}
+                    <div className="gradient-line" style={{ top: '302px', left: '29px' }} /> {/* 位置を調整 */}
+
+                    {/* Bプランのチェックアイテム */}
+                    <div className="check-icon">
+                        <Image 
+                            src="/images/check.svg"
+                            alt="check"
+                            width={16}
+                            height={16}
+                            priority
+                            className="check-image"
+                        />
+                    </div>
+                    <div className="atext1">{atex5()}</div>
+                    <div className="vector-7"></div>
+                </div>
+
+                {/* Plan C */}
+                <div className="plan-container-c">
+                    <div className="plan-gradient-overlay" />
+                    <div className="plan-title">Plan</div>
+                    <div className="plan-letter">C</div>
+                    <div className="price-yen">¥</div>
+                    <div className="price-amount">100,000</div>
+                    <div className="vector-6"></div>
+                    
+                    {/* Plan C の金額の下にグラデーションラインを追加 */}
+                    <div className="gradient-line" style={{ top: '302px', left: '29px' }} /> {/* 位置を調整 */}
+
+                    {/* Cプランのチェックアイテム */}
+                    <div className="check-icon">
+                        <Image 
+                            src="/images/check.svg"
+                            alt="check"
+                            width={16}
+                            height={16}
+                            priority
+                            className="check-image"
+                        />
+                    </div>
+                    <div className="atext1">コミュニティ参加して質問可能</div>
+                    <div className="vector-7"></div>
+                </div>
             </div>
 
-            {/* Plan B */}
-            <div className="plan-container-b">
-                <div className="plan-gradient-overlay" />
-                <div className="plan-title">Plan</div>
-                <div className="plan-letter">B</div>
-                <div className="price-yen">¥</div>
-                <div className="price-amount">100,000</div>
-                <div className="vector-6"></div>
-                
-                {/* Plan B の金額の下にグラデーションラインを追加 */}
-                <div className="gradient-line" style={{ top: '302px', left: '29px' }} /> {/* 位置を調整 */}
-
-                {/* Bプランのチェックアイテム */}
-                <div className="check-icon">
-                    <Image 
-                        src="/images/check.svg"
-                        alt="check"
-                        width={16}
-                        height={16}
-                        priority
-                        className="check-image"
-                    />
-                </div>
-                <div className="atext1">{atex5()}</div>
-                <div className="vector-7"></div>
-            </div>
-
-            {/* Plan C */}
-            <div className="plan-container-c">
-                <div className="plan-gradient-overlay" />
-                <div className="plan-title">Plan</div>
-                <div className="plan-letter">C</div>
-                <div className="price-yen">¥</div>
-                <div className="price-amount">100,000</div>
-                <div className="vector-6"></div>
-                
-                {/* Plan C の金額の下にグラデーションラインを追加 */}
-                <div className="gradient-line" style={{ top: '302px', left: '29px' }} /> {/* 位置を調整 */}
-
-                {/* Cプランのチェックアイテム */}
-                <div className="check-icon">
-                    <Image 
-                        src="/images/check.svg"
-                        alt="check"
-                        width={16}
-                        height={16}
-                        priority
-                        className="check-image"
-                    />
-                </div>
-                <div className="atext1">コミュニティ参加して質問可能</div>
-                <div className="vector-7"></div>
-            </div>
-
-            {/* Get NEW Abilityテキスト */}
-            <div className="get-ability-text">Get NEW Ability</div>
-            <div className="get-ability-text1">まずはお気軽に問い合わせください</div>
-            
-            {/* 入力フィードとそのキスト、送信ボタン */}
-            <div className="input-field">
-                <div className="input-text">Contact</div>
-                <div className="submit-button">
-                    <Image 
-                        src="/images/Group 311.svg"
-                        alt="submit"
-                        width={38}
-                        height={38}
-                        priority
-                        className="submit-icon"
-                    />
+            {/* Contactセクションは別のdivとして配置 */}
+            <div className="contact-section">
+                <div className="get-ability-text">Get NEW Ability</div>
+                <div className="get-ability-text1">まずはお気軽に問い合わせください</div>
+                <div className="input-field">
+                    <div className="input-text">Contact</div>
+                    <div className="submit-button">
+                        <Image 
+                            src="/images/Group 311.svg"
+                            alt="submit"
+                            width={38}
+                            height={38}
+                            priority
+                            className="submit-icon"
+                        />
+                    </div>
                 </div>
             </div>
 

@@ -150,6 +150,7 @@ const Main = () => {
             <div className="movie-subtext">
                 {splitText('動画視聴ページへのリンクが確認可能です', 2, false)}
             </div>
+
             <div className="consultant-circle"></div>
             <div className="consultant-icon"></div>
             <div className="line3"></div>
@@ -159,6 +160,7 @@ const Main = () => {
             <div className="consultant-subtext">
                 {splitText('コンサルティングの日程を調整します', 3, false)}
             </div>
+
             <div className="group-circle"></div>
             <div className="group-icon"></div>
             <div className="group-text">
@@ -166,139 +168,6 @@ const Main = () => {
             </div>
             <div className="group-subtext">
                 {splitText('AIを自分のスキルにするメンバーのグループへ招待します', 4, false)}
-            </div>
-            <div className="plans-wrapper">
-                {/* Plan A */}
-                <div className="plan-container">
-                    <div className="plan-title">Plan</div>
-                    <div className="plan-letter">A</div>
-                    <div className="price-yen">¥</div>
-                    <div className="price-amount">300,000</div>
-                    <hr className="gradient-line" />
-                    
-                    <div className="check-icon">
-                        <img alt="check" width="16" height="16" decoding="async" data-nimg="1" className="check-image" style={{color: 'transparent'}} src="/images/check.svg" />
-                    </div>
-                    <div className="atext1">7日間動画2本まで</div>
-                    
-                    <div className="check-icon2">
-                        <img alt="check" width="16" height="16" decoding="async" data-nimg="1" className="check-image" style={{color: 'transparent'}} src="/images/check.svg" />
-                    </div>
-                    <div className="atext2">AIエキスパートのコンサル</div>
-                    
-                    <div className="check-icon3">
-                        <img alt="check" width="16" height="16" decoding="async" data-nimg="1" className="check-image" style={{color: 'transparent'}} src="/images/check.svg" />
-                    </div>
-                    <div className="atext3">動画閲覧無制限</div>
-                    
-                    <div className="check-icon4">
-                        <img alt="check" width="16" height="16" decoding="async" data-nimg="1" className="check-image" style={{color: 'transparent'}} src="/images/check.svg" />
-                    </div>
-                    <div className="atext4">コミュニティ参加して質問可能</div>
-                </div>
-
-                {/* Plan B */}
-                <div className="plan-container">
-                    <div className="plan-title">Plan</div>
-                    <div className="plan-letter">B</div>
-                    <div className="price-yen">¥</div>
-                    <div className="price-amount">100,000</div>
-                    
-                    <svg 
-                        className="gradient-line"
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="271" 
-                        height="2" 
-                        viewBox="0 0 271 2" 
-                        fill="none"
-                        style={{
-                            position: 'absolute',
-                            top: '302px',
-                            left: '29px',
-                            zIndex: 9999
-                        }}
-                    >
-                        <path 
-                            d="M0 1H271" 
-                            stroke="url(#paint0_linear_B)"
-                        />
-                        <defs>
-                            <linearGradient 
-                                id="paint0_linear_B" 
-                                x1="0" 
-                                y1="1.5" 
-                                x2="271" 
-                                y2="1.5" 
-                                gradientUnits="userSpaceOnUse"
-                            >
-                                <stop stopColor="#FF4747"/>
-                                <stop offset="1" stopColor="#FFE27B"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                    
-                    <div className="check-icon">
-                        <img alt="check" width="16" height="16" decoding="async" data-nimg="1" className="check-image" style={{color: 'transparent'}} src="/images/check.svg" />
-                    </div>
-                    <div className="atext1">7日間動画2本まで</div>
-                    
-                    <div className="check-icon2">
-                        <img alt="check" width="16" height="16" decoding="async" data-nimg="1" className="check-image" style={{color: 'transparent'}} src="/images/check.svg" />
-                    </div>
-                    <div className="atext2">AIエキスパートのコンサル</div>
-                    
-                    <div className="check-icon3">
-                        <img alt="check" width="16" height="16" decoding="async" data-nimg="1" className="check-image" style={{color: 'transparent'}} src="/images/check.svg" />
-                    </div>
-                    <div className="atext3">動画閲覧無制限</div>
-                    
-                    <div className="check-icon4">
-                        <img alt="check" width="16" height="16" decoding="async" data-nimg="1" className="check-image" style={{color: 'transparent'}} src="/images/check.svg" />
-                    </div>
-                    <div className="atext4">コミュニティ参加して質問可能</div>
-                </div>
-
-                {/* Plan C */}
-                <div className="plan-container">
-                    <div className="plan-title">Plan</div>
-                    <div className="plan-letter">C</div>
-                    <div className="price-yen">¥</div>
-                    <div className="price-amount">50,000</div>
-                    <hr className="gradient-line" />
-                    
-                    <svg 
-                        className="gradient-line"
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="271" 
-                        height="2" 
-                        viewBox="0 0 271 2" 
-                        fill="none"
-                        style={{
-                            position: 'absolute',
-                            top: '302px',
-                            left: '29px',
-                            zIndex: 9999
-                        }}
-                    >
-                        <path 
-                            d="M0 1H271" 
-                            stroke="url(#paint0_linear_C)"
-                        />
-                        <defs>
-                            <linearGradient 
-                                id="paint0_linear_C" 
-                                x1="0" 
-                                y1="1.5" 
-                                x2="271" 
-                                y2="1.5" 
-                                gradientUnits="userSpaceOnUse"
-                            >
-                                <stop stopColor="#FF4747"/>
-                                <stop offset="1" stopColor="#FFE27B"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div>
             </div>
         </div>
     );

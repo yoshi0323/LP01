@@ -1018,3 +1018,88 @@
     top: 50%;
     transform: translateY(-50%);
 }
+
+/* メニューセクションのアニメーション */
+.menu-section {
+    position: relative;
+    width: 100vw; /* ビューポート幅に合わせる */
+    height: 100%; /* 高さを100%に */
+    opacity: 0;
+    transition: opacity 2s ease-out; /* ベースアニメーション: 2秒 */
+}
+
+/* メニューセクションの表示状態 */
+.menu-section.is-visible {
+    opacity: 1;
+}
+
+/* メニューテキストのアニメーション */
+.menu-text {
+    position: absolute;
+    width: 121px;
+    height: 76px;
+    top: 1902px;
+    left: 660px;
+    opacity: 0;
+    transition: opacity 2s ease-out; /* メニューテキスト: 2秒 */
+    z-index: 2;
+}
+
+.menu-section.is-visible .menu-text {
+    opacity: 1;
+    transition-delay: 0.3s;
+}
+
+/* 説明文のアニメーション */
+.menu-description {
+    opacity: 0;
+    transition: opacity 2s ease-out;
+    position: absolute;
+    width: 275px;
+    height: 28px;
+    top: 1994px;
+    left: 583px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+    color: #626262;
+}
+
+.menu-section.is-visible .menu-description {
+    opacity: 1;
+    transition-delay: 0.6s;
+}
+
+/* プランコンテナのアニメーション */
+.plan-container,
+.plan-container-b,
+.plan-container-c {
+    opacity: 0;
+    transition: opacity 2s ease-out;
+    position: absolute;
+    width: 324px;
+    height: 549px;
+    top: 2128px;
+}
+
+.menu-section.is-visible .plan-container {
+    opacity: 1;
+    transition-delay: 0.9s;
+}
+
+.menu-section.is-visible .plan-container-b {
+    opacity: 1;
+    transition-delay: 1.2s;
+}
+
+.menu-section.is-visible .plan-container-c {
+    opacity: 1;
+    transition-delay: 1.5s;
+}
+/* プランコンテナの位置 */
+.plan-container { left: 194px; }
+.plan-container-b { left: 558px; }
+.plan-container-c { left: 922px; }
+
