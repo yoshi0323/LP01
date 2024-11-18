@@ -151,7 +151,7 @@
     line-height: 28px;
     text-align: left;
     
-    /* テキストカラ�� */
+    /* テキストカラ */
     color: #626262;
 }
 
@@ -486,7 +486,7 @@
     object-fit: contain;
 }
 
-/* 入力フィールドのスタイルも更新して、ボタンのスペースを確保 */
+/* 入力フィールドのスイルも更新して、ボタンのスペースを確保 */
 .input-field {
     /* 既存のスタイル ... */
     display: flex;
@@ -556,89 +556,129 @@
     gap: 16px;
 }
 
-.qa-item {
+.qa-item-wrapper {
+    margin-bottom: 16px;
     width: 726px;
+}
+
+.qa-item {
+    width: 100%;
     height: 66px;
-    gap: 0px;
-    opacity: 1;
     position: relative;
-    
-    /* 背景を透過 */
-    background: transparent;
-    
-    /* 角丸と白いボーダー */
-    border-radius: 12px;
-    border: 1.5px solid #FFFFFF;
-    
-    /* 子要素の配置 */
     display: flex;
     align-items: center;
-    padding: 0; /* パディングを0に設定 */
-    margin: 0; /* マーンを0に設定 */
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    transition: all 0.3s ease;
 }
 
-.qa-q-label {
-    position: absolute;
-    width: 16px;
-    height: 29px;
-    top: 17px;
-    left: 32px;
-    gap: 0px;
-    opacity: 1;
-    
-    /* フォントタイル */
+/* 開いているときのQエリアのスタイル */
+.qa-item-wrapper.open .qa-item {
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px 12px 0 0;
+}
+
+.qa-answer {
+    width: 100%;
+    min-height: 117px;
+    padding: 24px;
+    background: transparent;
+    display: flex;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    border-top: 0;
+    border-radius: 0 0 12px 12px;
+    flex-shrink: 0;
+    margin-top: -1.5px;
+}
+
+/* アニメーションをスムーズに */
+.qa-item,
+.qa-answer {
+    transition: all 0.3s ease;
+}
+
+.qa-a-label {
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 20px;
     font-weight: 700;
-    line-height: 28.96px;
-    letter-spacing: 0.1em;
-    text-align: left;
-    
-    color: #FFFFFF;  /* 背景色を白か字色を白に変更 */
+    color: #FFFFFF;
+    margin-right: 24px;
 }
 
-.qa-vertical-line {
-    position: absolute;
-    width: 0;
-    height: 65px;
-    top: 1px;
-    left: 79px;
-    gap: 0px;
-    opacity: 1;
-    
-    /* 白い縦線 */
-    border-left: 1.5px solid #FFFFFF;
-}
-
-.qa-question-text {
-    position: absolute;
-    width: 200px; /* 幅広げる（130px → 200px） */
-    height: 28px;
-    top: 18px;
-    left: 111px;
-    gap: 0px;
-    opacity: 1;
-    
-    /* フォントスタイル */
+.qa-answer-text {
     font-family: 'Noto Sans JP', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 28px;
-    letter-spacing: 0.1em;
-    text-align: left;
-    white-space: nowrap; /* テキストを1行に強制 */
-    overflow: hidden; /* はみ出した部分を隠す */
-    text-overflow: ellipsis; /* 必要に応じて省略記号を表示 */
-    
+    font-size: 16px;
+    line-height: 1.6;
     color: #FFFFFF;
 }
 
-.qa-expand-icon {
+.qa-expand-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
     position: absolute;
-    right: 14px;  /* 右端からの余白 */
+    right: 14px;
     top: 50%;
-    transform: translateY(-50%);  /* 垂直中央揃え */
-    cursor: pointer;  /* ホバー時のカーソル */
+    transform: translateY(-50%);
+}
+
+/* アニメーションの追加 */
+.qa-answer {
+    animation: slideDown 0.3s ease-out forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.qa-q-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0 24px;
+}
+
+.qa-question-text {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+    flex-grow: 1;
+}
+
+.qa-a-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-right: 24px;
+}
+
+.qa-answer-text {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #FFFFFF;
+}
+
+.qa-expand-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .gradient-line {
@@ -661,7 +701,7 @@
 
 .additional-gradient-line {
     position: absolute;
-    width: 271px; /* ラインの幅 */
+    width: 271px; /* ライン幅 */
     height: 1px; /* ラインの高さ */
     top: 422px; /* 上辺からの位置 */
     left: 29px; /* 左辺からの位置 */
@@ -674,7 +714,7 @@
     width: 271px; /* ラインの幅 */
     height: 1px; /* ラインのさ */
     top: 482px; /* 上辺からの位置 */
-    left: 29px; /* 左辺からの位 */
+    left: 29px; /* 左辺かの位 */
     background: linear-gradient(90deg, #FF4747 0%, #FFE27B 100%); /* グラデーションの色 */
     z-index: 1; /* 他の要素の上に表示 */
 }
@@ -822,12 +862,12 @@
 }
 
 .text-item {
-    display: flex; /* フレックスボックスを使用 */
+    display: flex; /* フレックスボックス使用 */
     align-items: center; /* 垂直方向に中央揃え */
 }
 
 .check-icon {
-    margin-right: 10px; /* チェックマークとテキストの間にスペースを追加 */
+    margin-right: 10px; /* チェックマークとテキスの間にペースを追加 */
     /* 必要に応じてサイズを調整 */
 }
 
@@ -863,4 +903,118 @@
         right: 2%; /* さらに画面が小さくなった時の位置調整 */
         width: 300px; /* 必要に応じてサイズも調整 */
     }
+}
+
+/* モーダル用のスタイルを更新 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 726px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 32px;
+    border-radius: 12px;
+    
+    /* グラデーションに透過を追加 */
+    background: linear-gradient(90deg, 
+        rgba(245, 117, 117, 0.9) 0%, /* #FF4747 with 0.9 opacity */
+        rgba(255, 226, 123, 0.9) 100% /* #FFE27B with 0.9 opacity */
+    );
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.modal-q-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-right: 24px;
+}
+
+.modal-question {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFFFFF;
+    flex-grow: 1;
+    margin-right: 38px; /* 矢印アイコンのためのスペース */
+}
+
+.modal-body {
+    display: flex;
+    padding: 24px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-a-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-right: 24px;
+}
+
+.modal-answer {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #FFFFFF;
+}
+
+.modal-close {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.modal-close-icon {
+    filter: brightness(0) invert(1);
+    display: block !important;
+    width: 38px;
+    height: 38px;
+}
+
+/* SVGのホバー効果を追加する場合 */
+.modal-close:hover {
+    opacity: 0.8;
+}
+
+/* QAアイテムのボタンスタイル */
+.qa-expand-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
 }

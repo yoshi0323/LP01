@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Main.css';
 
 // グラデーションライン用のコンポーネント
@@ -43,6 +43,30 @@ const Main = () => {
             </span>
         ));
     };
+
+    // スクロールトリガー用の参照を追加
+    const sectionRefs = useRef([]);
+
+    useEffect(() => {
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '-50px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('start-animation');
+                }
+            });
+        }, observerOptions);
+
+        sectionRefs.current.forEach(section => {
+            if (section) observer.observe(section);
+        });
+
+        return () => observer.disconnect();
+    }, []);
 
     return (
         <div className="main-container">
@@ -101,18 +125,22 @@ const Main = () => {
                     </linearGradient>
                 </defs>
             </svg>
-            <div className="text-item">
+            <div className="text-item" ref={el => sectionRefs.current[0] = el}>
                 {splitText('Flow', 0)}
             </div>
             <div className="letter-circle"></div>
             <div className="email-icon"></div>
             <div className="line"></div>
-            <div className="contact-text">
-                {splitText('Contact', 1)}
+
+            <div className="contact-section" ref={el => sectionRefs.current[1] = el}>
+                <div className="contact-text">
+                    {splitText('Contact', 0)}
+                </div>
+                <div className="contact-subtext">
+                    {splitText('本ページから、お問い合わせください', 0, false)}
+                </div>
             </div>
-            <div className="contact-subtext">
-                {splitText('本ページから、お問い合わせください', 1, false)}
-            </div>
+
             <div className="movie-circle"></div>
             <div className="movie-icon"></div>
             <div className="line2"></div>

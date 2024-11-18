@@ -1,12 +1,53 @@
 /* C:\Users\user\LPws\lpws\components\Main1.js */
-import React from 'react';
+import React, { useState } from 'react';
 import './Main1.css';
 import Image from 'next/image';
 import Footer from './Footer';
 
 const Main1 = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedQuestion, setSelectedQuestion] = useState(null);
+    const [openIndex, setOpenIndex] = useState(null);
+
     const atex5 = () => {
         return "AIエキスパートのコンサル";
+    };
+
+    // QAデータの配列
+    const qaData = [
+        {
+            question: "返金は可能か",
+            answer: "3ヶ月以内であれば可能です。質問に対しての回答を入れます"
+        },
+        {
+            question: "返金は可能か",
+            answer: "3ヶ月以内であれば可能です。質問に対しての回答を入れます"
+        },
+        {
+            question: "返金は可能か",
+            answer: "3ヶ月以内であれば可能です。質問に対しての回答を入れます"
+        },
+        {
+            question: "返金は可能か",
+            answer: "3ヶ月以内であれば可能です。質問に対しての回答を入れます"
+        }
+    ];
+
+    // モーダルを開く関数
+    const openModal = (index) => {
+        setSelectedQuestion(qaData[index]);
+        setIsModalOpen(true);
+    };
+
+    // モーダルを閉じる関数
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setSelectedQuestion(null);
+    };
+
+    // アコーディオンの開閉を制御する関数
+    const toggleAccordion = (index) => {
+        setOpenIndex(openIndex === index ? null : index);
     };
 
     return (
@@ -140,7 +181,7 @@ const Main1 = () => {
                 <div className="gradient-line" />
                 <div className="vector-9"></div>
 
-                {/* 4つ目のアイテム */}
+                {/* 4つ目のア���テム */}
                 <div className="check-icon4">
                     <Image 
                         src="/images/check.svg"
@@ -242,223 +283,93 @@ const Main1 = () => {
                 />
                 {/* QA コンテンツ用のFrame */}
                 <div className="qa-content-frame">
-                    {/* 1つ目のンナ */}
-                    <div className="qa-item" style={{ position: 'relative' }}>
-                        {/* Q1テキスト */}
-                        <div className="qa-q-label">Q</div>
-                        
-                        {/* 縦線 - 仕様に合わせて修正 */}
-                        <div 
-                            style={{
-                                width: '0px',
-                                height: '61px',
-                                position: 'absolute',
-                                top: '0px',
-                                left: '79px',
-                                opacity: '1',
-                                display: 'block',
-                                margin: '0',
-                                flexShrink: '0',
-                                borderLeft: '1.5px solid #FFFFFF'
-                            }} 
-                        />
-                        
-                        {/* 質問テキスト */}
-                        <div className="qa-question-text">返金は可能か</div>
-
-                        {/* 下向きアイコンを追加 */}
-                        <Image 
-                            src="/images/Group 311 (2).svg"
-                            alt="expand"
-                            width={38}
-                            height={38}
-                            priority
-                            style={{
-                                position: 'absolute',
-                                top: '14px',
-                                right: '14px'
-                            }}
-                        />
-                    </div>
-
-                    {/* 2つ目のコンテナ */}
-                    <div className="qa-item" style={{ 
-                        width: '726px',
-                        height: '183px',
-                        position: 'relative',
-                        top: '16px',
-                        gap: '0px',
-                        borderRadius: '12px',
-                        border: '1.5px solid #FFFFFF',
-                        opacity: '1',
-                        background: 'transparent',
-                        marginBottom: '16px'
-                    }}>
-                        {/* Q テキスト */}
-                        <div className="qa-q-label">Q</div>
-                        
-                        {/* 縦線 */}
-                        <div 
-                            style={{
-                                width: '0px',
-                                height: '63px',
-                                position: 'absolute',
-                                top: '0px',
-                                left: '79px',
-                                opacity: '1',
-                                display: 'block',
-                                margin: '0',
-                                flexShrink: '0',
-                                borderLeft: '1.5px solid #FFFFFF'
-                            }} 
-                        />
-
-                        {/* 横線 */}
-                        <div 
-                            style={{
-                                width: '726px',
-                                height: '0px',
-                                position: 'absolute',
-                                top: '63px',
-                                left: '0px',
-                                opacity: '1',
-                                borderTop: '1.5px solid #FFFFFF'
-                            }} 
-                        />
-                        
-                        {/* 質問テキスト */}
-                        <div className="qa-question-text">返金は可能か</div>
-
-                        {/* A テキスト - 正確なタイポグラフィーで修正 */}
-                        <div style={{
-                            position: 'absolute',
-                            width: '16px',
-                            height: '29px',
-                            top: '89px',
-                            left: '32px',
-                            color: '#FFF',
-                            fontFamily: '"Noto Sans JP"',
-                            fontSize: '20px',
-                            fontStyle: 'normal',
-                            fontWeight: 700,
-                            lineHeight: 'normal',
-                            letterSpacing: '2px'
-                        }}>A</div>
-
-                        {/* 回答テキスト */}
-                        <div style={{
-                            width: '500px',
-                            height: '56px',
-                            position: 'absolute',
-                            top: '89px',
-                            left: '111px',
-                            gap: '0px',
-                            opacity: '1',
-                            fontFamily: 'Noto Sans JP',
-                            fontSize: '20px',
-                            fontWeight: '700',
-                            lineHeight: '28px',
-                            letterSpacing: '0.1em',
-                            textAlign: 'left',
-                            textUnderlinePosition: 'from-font',
-                            textDecorationSkipInk: 'none',
-                            color: '#FFFFFF'
-                        }}>3ヶ月以内でれば可能で。<br/>質問に対しての回答を入れます</div>
-
-                        {/* 上向きアイコン */}
-                        <Image 
-                            src="/images/Group 311 (3).svg"
-                            alt="expand"
-                            width={38}
-                            height={38}
-                            priority
-                            style={{
-                                position: 'absolute',
-                                top: '14px',
-                                right: '14px'
-                            }}
-                        />
-                    </div>
-
-                    {/* 3つ目のコンテナ */}
-                    <div className="qa-item" style={{ position: 'relative' }}>
-                        {/* Q3テキスト */}
-                        <div className="qa-q-label">Q</div>
-                        
-                        {/* 縦線 */}
-                        <div 
-                            style={{
-                                width: '0px',
-                                height: '61px',
-                                position: 'absolute',
-                                top: '0px',
-                                left: '79px',
-                                opacity: '1',
-                                display: 'block',
-                                margin: '0',
-                                flexShrink: '0',
-                                borderLeft: '1.5px solid #FFFFFF'
-                            }} 
-                        />
-                        
-                        {/* 質問テキスト */}
-                        <div className="qa-question-text">返金は可能か</div>
-
-                        {/* 下向きアイコン */}
-                        <Image 
-                            src="/images/Group 311 (2).svg"
-                            alt="expand"
-                            width={38}
-                            height={38}
-                            priority
-                            style={{
-                                position: 'absolute',
-                                top: '14px',
-                                right: '14px'
-                            }}
-                        />
-                    </div>
-
-                    {/* 4つ目のコンテナ */}
-                    <div className="qa-item" style={{ position: 'relative' }}>
-                        {/* Q4テキスト */}
-                        <div className="qa-q-label">Q</div>
-                        
-                        {/* 縦線 */}
-                        <div 
-                            style={{
-                                width: '0px',
-                                height: '61px',
-                                position: 'absolute',
-                                top: '0px',
-                                left: '79px',
-                                opacity: '1',
-                                display: 'block',
-                                margin: '0',
-                                flexShrink: '0',
-                                borderLeft: '1.5px solid #FFFFFF'
-                            }} 
-                        />
-                        
-                        {/* 質問テキスト */}
-                        <div className="qa-question-text">返金は可能か</div>
-
-                        {/* 下向きアイコン */}
-                        <Image 
-                            src="/images/Group 311 (2).svg"
-                            alt="expand"
-                            width={38}
-                            height={38}
-                            priority
-                            style={{
-                                position: 'absolute',
-                                top: '14px',
-                                right: '14px'
-                            }}
-                        />
-                    </div>
+                    {qaData.map((item, index) => (
+                        <div key={index} className={`qa-item-wrapper ${openIndex === index ? 'open' : ''}`}>
+                            <div className="qa-item">
+                                <div className="qa-q-label">Q</div>
+                                <div className="qa-question-text">{item.question}</div>
+                                <button 
+                                    onClick={() => toggleAccordion(index)}
+                                    className="qa-expand-button"
+                                >
+                                    <svg 
+                                        width="38" 
+                                        height="38" 
+                                        viewBox="0 0 38 38" 
+                                        fill="none" 
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        style={{ transform: openIndex === index ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                                    >
+                                        <rect width="38" height="38" rx="8" fill="white"/>
+                                        <path 
+                                            d="M19 9L19 29" 
+                                            stroke="#FF6552" 
+                                            strokeWidth="1.5" 
+                                            strokeLinecap="round"
+                                        />
+                                        <path 
+                                            d="M13 23L19 29L25 23" 
+                                            stroke="#FF6552" 
+                                            strokeWidth="1.5" 
+                                            strokeLinecap="round" 
+                                            strokeLinejoin="round"
+                                        />
+                                    </svg>
+                                </button>
+                            </div>
+                            {openIndex === index && (
+                                <div className="qa-answer">
+                                    <div className="qa-a-label">A</div>
+                                    <div className="qa-answer-text">{item.answer}</div>
+                                </div>
+                            )}
+                        </div>
+                    ))}
                 </div>
             </div>
+
+            {/* モーダルコンポーネント */}
+            {isModalOpen && (
+                <div className="modal-overlay" onClick={closeModal}>
+                    <div className="modal-content" onClick={e => e.stopPropagation()}>
+                        <div className="modal-header">
+                            <div className="modal-q-label">Q</div>
+                            <div className="modal-question">{selectedQuestion?.question}</div>
+                            <button 
+                                className="qa-expand-button modal-close" 
+                                onClick={closeModal}
+                            >
+                                <svg 
+                                    width="38" 
+                                    height="38" 
+                                    viewBox="0 0 38 38" 
+                                    fill="none" 
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <rect width="38" height="38" rx="8" fill="white"/>
+                                    <path 
+                                        d="M19 29L19 9" 
+                                        stroke="#FF6552" 
+                                        strokeWidth="1.5" 
+                                        strokeLinecap="round"
+                                    />
+                                    <path 
+                                        d="M13 15L19 9L25 15" 
+                                        stroke="#FF6552" 
+                                        strokeWidth="1.5" 
+                                        strokeLinecap="round" 
+                                        strokeLinejoin="round"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+                        <div className="modal-body">
+                            <div className="modal-a-label">A</div>
+                            <div className="modal-answer">{selectedQuestion?.answer}</div>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             <Footer />
         </div>
