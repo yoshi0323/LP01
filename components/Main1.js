@@ -11,6 +11,7 @@ const Main1 = () => {
 
     // Intersection Observer用のref
     const menuSectionRef = useRef(null);
+    const qaBackgroundRef = useRef(null);
 
     useEffect(() => {
         const observerOptions = {
@@ -38,6 +39,35 @@ const Main1 = () => {
         return () => {
             if (menuSection) {
                 observer.unobserve(menuSection);
+            }
+        };
+    }, []);
+
+    useEffect(() => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    console.log('QA section is visible');
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const qaBackground = qaBackgroundRef.current;
+        if (qaBackground) {
+            observer.observe(qaBackground);
+        }
+
+        return () => {
+            if (qaBackground) {
+                observer.unobserve(qaBackground);
             }
         };
     }, []);
@@ -304,8 +334,8 @@ const Main1 = () => {
             </div>
 
             {/* QA背景セクション */}
-            <div className="qa-background">
-                <div id="qa-section" className="qa-text">QA</div>
+            <div className="qa-background" ref={qaBackgroundRef}>
+                <div className="qa-text">QA</div>
                 <Image 
                     src="/images/flatlay-5115827_1280 1.png"
                     alt="QA section image"

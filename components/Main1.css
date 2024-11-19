@@ -524,6 +524,11 @@
     text-align: left;
     
     color: #F6F8FB;
+
+    /* アニメーション設定 */
+    opacity: 0; /* 初期状態は非表示 */
+    transform: translateY(20px); /* 上から下へのスライド距離 */
+    transition: all 2s ease-out; /* アニメーション時間: 2秒 */
 }
 
 .qa-image {
@@ -570,7 +575,11 @@
     background: transparent;
     border: 1.5px solid rgba(255, 255, 255, 0.5);
     border-radius: 12px;
-    transition: all 0.3s ease;
+
+    /* アニメーション設定を必要なプロパティのみに限定 */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 2s ease-out, transform 2s ease-out;
 }
 
 /* 開いているときのQエリアのスタイル */
@@ -745,7 +754,7 @@
 
 .atext4 { 
     top: 505px;
-    width: 220px; /* テキストが長いため幅を調整 */
+    width: 220px; /* キストが長いため幅を調整 */
 }
 
 /* Plan Bのテキストスタイル */
@@ -872,7 +881,7 @@
 }
 
 .text-content {
-    line-height: 1.5; /* 行の高さを調整 */
+    line-height: 1.5; /* 行の���さを調整 */
     font-size: 14px; /* フォントサイズを調整 */
     /* 他のスタイルを必要に応じて追加 */
 }
@@ -1102,4 +1111,95 @@
 .plan-container { left: 194px; }
 .plan-container-b { left: 558px; }
 .plan-container-c { left: 922px; }
+
+/* QAセクションのアニメーション - 既存のスタイルはそのまま維持 */
+.qa-background {
+    /* 既存のスタイルを維持 */
+    position: absolute;
+    width: 1440px;
+    height: 589px;
+    top: 3465px;
+    left: -1px;
+    opacity: 0.8;
+    z-index: 1;
+    background: linear-gradient(90deg, #FF4747 0%, #FFE27B 100%);
+}
+
+/* QAテキストのアニメーション */
+.qa-text {
+    /* 既存のスタイルを維持 */
+    position: absolute;
+    width: 120px;
+    height: 153px;
+    top: -36px;
+    left: 40px;
+    z-index: 2;
+    font-family: 'Abel', sans-serif;
+    font-size: 120px;
+    font-weight: 400;
+    line-height: 152.93px;
+    text-align: left;
+    color: #F6F8FB;
+
+    /* アニメーション設定 */
+    opacity: 0;
+    transform: translateY(20px);
+    /* アニメーション時間を2秒に延長 */
+    transition: all 2s ease-out;
+}
+
+/* QAアイテムのアニメーション */
+.qa-item {
+    /* 既存のスタイルを維持 */
+    width: 100%;
+    height: 66px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+
+    /* アニメーション設定を必要なプロパティのみに限定 */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+/* 表示状態のアニメーション */
+/* QAテキストが表示される - 遅延0.5秒 */
+.qa-background.is-visible .qa-text {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+}
+
+/* 各QAアイテムの表示タイミング - 0.8秒間隔 */
+/* 1つ目のアイテム: 1秒後に表示開始 */
+.qa-background.is-visible .qa-item:nth-child(1) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 1s;
+}
+
+/* 2つ目のアイテム: 1.8秒後に表示開始 */
+.qa-background.is-visible .qa-item:nth-child(2) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 1.8s;
+}
+
+/* 3つ目のアイテム: 2.6秒後に表示開始 */
+.qa-background.is-visible .qa-item:nth-child(3) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 2.6s;
+}
+
+/* 4つ目のアイテム: 3.4秒後に表示開始 */
+.qa-background.is-visible .qa-item:nth-child(4) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 3.4s;
+}
 

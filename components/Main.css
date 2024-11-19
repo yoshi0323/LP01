@@ -7,21 +7,18 @@
 }
 
 .text-item {
-    position: absolute; /* 位置を絶対に設定 */
-    top: 932px; /* 上からの位置 */
-    left: 108px; /* 左からの位置 */
-    width: auto; /* 幅を自動に変更 */
-    height: 76px; /* 固定高さ */
-    opacity: 1; /* 不透明度を1に変更 */
-    
-    font-family: 'Abel', sans-serif; /* フォントファミリー */
-    font-size: 60px; /* フォントサイズ */
-    font-weight: 400; /* フォントウェイト */
-    line-height: 76.46px; /* 行の高さ */
-    text-align: left; /* テキストの配置 */
-    white-space: nowrap; /* 文字が折り返されないように */
-
-    background: linear-gradient(90deg, #FF4747 0%, #FFE27B 100%); /* 線形グラデーション */
+    position: absolute;
+    top: 932px;
+    left: 108px;
+    width: auto;
+    height: 76px;
+    font-family: 'Abel', sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 76.46px;
+    text-align: left;
+    white-space: nowrap;
+    background: linear-gradient(90deg, #FF4747 0%, #FFE27B 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
